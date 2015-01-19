@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Rails | Not Quite Beta]]></title>
+  <link href="http://notquitebeta.github.io/blog/categories/rails/atom.xml" rel="self"/>
+  <link href="http://notquitebeta.github.io/"/>
+  <updated>2014-01-03T19:37:22-05:00</updated>
+  <id>http://notquitebeta.github.io/</id>
+  <author>
+    <name><![CDATA[NQB]]></name>
+    <email><![CDATA[feedback@notquitebeta.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby on Rails Tutorial, Over the Hump]]></title>
+    <link href="http://notquitebeta.github.io/2013/06/11/Rails_tutorial_pt3"/>
+    <updated>2013-06-11T21:45:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/06/11/Rails_tutorial_pt3</id>
+    <content type="html"><![CDATA[<p><em>Ruby on Rails tutorial &ndash; Chapter 4-7/11</em></p>
+
+<p>Chapter 4 was a primer on Ruby for Rails development.  Having been using Ruby for almost 2 years, this was the easiest Chapter for me but possibly more intimidating for someone new to it.</p>
+
+<p>Chapter 5 was the start of a <em>huge</em> Chapter and was essentially a fully functional app without using scaffolding.  There were a lot of details but was very well presented.  There were also a lot of other non-Rails development tools presented.  At times, it&rsquo;s not clear whether some tools are used occasionally or frequently.  For example, the impression I get is that RSpec is used often; however, RSpec is not the default test tool.  What about Spork?  I find Spork incredibly useful because it speeds up testing.  Spork was also one of the sources of great frustration because I spent an hour trying to find the source of a failed test, only to luck on a <a href="http://stackexchange.com/">Stack Overflow</a> post that suggested someone restart the Spork server because changes in the settings were not incorporated.</p>
+
+<p>Chapter 6 and 7 describes user authentication.  It could have been me but I went through this section without really getting what was going on.  It was a &ldquo;type this and this&rdquo; sort of experience.  Nothing stuck.  Unfortunately, this seems like something that will be needed for most apps.  Maybe if I make it through this book, going back for a second run through will make more sense.  One things that may be tripping me up is that, it seems, the earlier chapters took the approach, &ldquo;Type all this in first and I&rsquo;ll explain it piece by piece.&rdquo;  The last two Chapters started explaining bits of code before any typing occured.  I&rsquo;m not sure if it&rsquo;s having the context before the explanation or having a chance to think about it before the explanation, but I preferred the earlier approach.</p>
+
+<p>One other problem I still have is the files.  There are some files that make sense like the header and footer being under <code>app/views/layouts/</code>.  That makes sense.  But there are a number of files that are created.  I&rsquo;m not sure if files and directories require specific names to be incorporated into the page.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Continuing with the Ruby on Rails Tutorial]]></title>
+    <link href="http://notquitebeta.github.io/2013/06/02/Rails_tutorial_pt2"/>
+    <updated>2013-06-02T21:45:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/06/02/Rails_tutorial_pt2</id>
+    <content type="html"><![CDATA[<p><em>Ruby on Rails tutorial &ndash; Chapter 2-3/11</em></p>
+
+<p>Chapter 2 was fun and short. Chapter 3 was mostly ok.  The page that was built was straightforward enough.  Then, there were more advanced topics like installing PostgreSQL locally for development, then installing Guard and Spork for testing.</p>
+
+<p>Something happened with the PostgreSQL set-up. Installation was easy enough.  There is a link to download a zipped version of the app itself, which can then be dropped into the /Applications folder.  he problem seemed to be in editing the database.yml file to configure it.  Along the way, I messed something up bad enough that my rspec tests were failing with weird errors.  I slowly ran &lsquo;git checkout &mdash; files&rsquo; until I got to a point before the PostgreSQL setup and the Rspec tests were working again.  Then, I carefully tiptoed around the database problem and installed Guard, then Spork.  I&rsquo;m not sure exactly what they were doing, especcially Guard.  Having Spork running definiely sped up the Rspec tests though.</p>
+
+<p>Installing the Rubytest package into Sublime Text 2 was quite nice as well.  Other than the PostgreSQL debacle and not quite understanding the setup files for Guard and Spork, Chapter 3 was ok.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Back On The Rails]]></title>
+    <link href="http://notquitebeta.github.io/2013/05/29/Back_on_the_Rails"/>
+    <updated>2013-05-29T18:56:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/05/29/Back_on_the_Rails</id>
+    <content type="html"><![CDATA[<p>After some time playing with Javascript and jQuery, I&rsquo;m thinking of moving back to learning Ruby on Rails.  There are some small WebApps I&rsquo;d like to build.  Here is an exercise tracker.</p>
+
+<h4>App: Exercise Checklist/Tracker</h4>
+
+<ul>
+<li>Allow user log in so that it can be used by different people</li>
+<li>Add an exercise to the list</li>
+<li>have a checkbox for the day</li>
+<li>it should reset each day</li>
+<li>have a optional memo field for a number</li>
+</ul>
+
+
+<h4>I should learn:</h4>
+
+<ul>
+<li>How to authenticate users</li>
+<li>leave a cookie?</li>
+<li>implement as a responsive design</li>
+<li>deploy to &hellip; (heroku?)</li>
+</ul>
+
+
+<h4>Other Ideas</h4>
+
+<ul>
+<li>In the full size page, include an inspirational image randomly from Flickr?</li>
+<li>Add a bar graph(?) for each exercise vs day</li>
+<li>Alternatively, use a calendar and color each day based on % of activities completed (e.g. 0-10%: red, 10-60%:orange, 60-99%: yellow, 100% green)</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The deployment problem]]></title>
+    <link href="http://notquitebeta.github.io/2013/01/27/The_deployment_problem"/>
+    <updated>2013-01-27T00:00:00-05:00</updated>
+    <id>http://notquitebeta.github.io/2013/01/27/The_deployment_problem</id>
+    <content type="html"><![CDATA[<p>In the last few weeks, I’ve been continuing with <a href="http://www.amazon.com/gp/product/0321832051/ref=as_li_ss_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0321832051&amp;linkCode=as2&amp;tag=noqube-20">Ruby on Rails Tutorial</a>. I’m currently on chapter 5. It’s slow going, but I’m trying to follow along with examples. Not surprisingly, there’s been a few tangents along the way.</p>
+
+<p>The first chapter in the book discussed using <a href="http://en.wikipedia.org/wiki/Git_(software">Git</a>. This was nice because I tried to learn Git a few months ago and couldn’t quite get it working. I used the on-line book, <a href="http://git-scm.com/book">Pro-Git</a>, to learn Git but could quite wrap my head around it. Reading about Git in <a href="http://www.amazon.com/gp/product/0321832051/ref=as_li_ss_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0321832051&amp;linkCode=as2&amp;tag=noqube-20">Ruby on Rails Tutorial</a> helped because it walked through a specific use case that would be applicable to my workflow. This was a good intro to Git that then allowed me to better understand the use cases for Git described in <a href="http://git-scm.com/book">Pro-Git</a>. I’ve found this many times before, where I can’t follow the “basic” reference but need to get an “even more basic” reference. This gives me enough to then understand the “basic” reference.</p>
+
+<p>When I started learned Perl, Ruby, and Python, I would get the Learning {insert-language-here} book from O’Reilly. I never seem to get traction so I would get the shorter book from the PeachPit Quickstart series. A few hours with the PeachPit book would give me a sense of the syntax and general approach to the language (I can’t deny that this reminds me of how I liked picture books as a kid). Then, reading the Learning version of the language allows me to get started. The PeachPit book never seems to give a solid enough foundation to the language (for me) and it would just me a short-term memory version of the language. It’s like getting a few tools but not a toolbox. The Learning series (which is aimed at beginners), is too much and my mind would just start saying “blah, blah, blah” as I read. I’m not sure if it was over my head or I may just be too impatient to sit through the background, foundational basis of the language that is covered in the first chapters.</p>
+
+<p>In this same way, <a href="http://www.amazon.com/gp/product/0321832051/ref=as_li_ss_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0321832051&amp;linkCode=as2&amp;tag=noqube-20">Ruby on Rails Tutorial</a> gave me a start to Git but didn’t cover all the use cases that I would need. It was gear towards “type this to get this done.” However, this was enough to get me enough understanding to follow along in <a href="http://git-scm.com/book">Pro-Git</a>. In the end, I was able to set up Git repositories for some collaborative projects at work. I’m pretty glad Git was covered in the first chapter and snowballed into getting something productive done.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[One step forward, two steps back]]></title>
+    <link href="http://notquitebeta.github.io/2013/01/10/One_step_forward%2C_two_steps_back"/>
+    <updated>2013-01-10T00:00:00-05:00</updated>
+    <id>http://notquitebeta.github.io/2013/01/10/One_step_forward,_two_steps_back</id>
+    <content type="html"><![CDATA[<p>First, there was <strong>Learning Rails</strong>. Then, there was <a href="http://guides.rubyonrails.org/getting_started.html">RailsGuides</a>. Now, there’s <a href="http://www.amazon.com/gp/product/0321832051/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;tag=noqube-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0321832051">Ruby on Rails Tutorial</a>. I mentioned how lost I was after the first 100 pages of Learning Rails. With the RailsGuide, I was taking to opposite approach and typing along with the instructions. BUT, something happened and I ran into a error.</p>
+
+<p>The Railsguide tutorial is based on building a Blog web app. The first part was fine and I was able to add and view posts. The second part moves to adding comments that are associated to each post. This consists of the following steps:</p>
+
+<p>1) Generate the model for Comments
+2) Migrate the database
+3) Edit config/routes.rb
+4) Generate a comments controller.
+5) Edit show.html.erb to display the comment fields.
+6) Add a method for creating comments in the controller</p>
+
+<p>That was enough to mess up the app. I went back and undid those steps that involved editing a file (not generating or migrating) and it was working again, but when I added lines based on the tutorial, it failed again. The tutorial generally explains what the different steps are doing but it was not enough to teach me to troubleshoot the error.</p>
+
+<p>So now, I need to find another source from which to learn enough Rails to fix this problem, which will, in turn, explain enough to allow me to read the Learning Rails book. Right now, I feel like I’m further behind than when I started. I’m posting this in case someone else feels this way to motivate them to keep going (assuming that I dig myself out of this hole).</p>
+
+<p>I looked on Amazon and got the kindle edition of a book called <a href="http://www.amazon.com/gp/product/0321832051/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;tag=noqube-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0321832051">Ruby on Rails Tutorial</a>. What was appealing about this book is that it is described to teach all aspects of developing a Ruby on Rails application. This includes teaching other aspects like HTML, CSS, and using git. So the book should covers other topics on the Projects list, which would be great. Another positive is that this book is that it is less than half a year old so it’s running Rails3.</p>
+
+<p>The downside is the size of the book, which is listed as containing 600 pages in the print edition. My favorite programming book was Learning Perl from O’Reilly because it was less than 200 pages. It was short enough to requite only a mini-iota of discipline to finish. Optimistically, there will be enough different topics for developing with Rails to keep my attention through 600 pages (or at least enough to get a basic understanding of Rails). We will see.</p>
+]]></content>
+  </entry>
+  
+</feed>

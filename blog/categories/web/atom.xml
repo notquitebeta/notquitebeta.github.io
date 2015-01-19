@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Web | Not Quite Beta]]></title>
+  <link href="http://notquitebeta.github.io/blog/categories/web/atom.xml" rel="self"/>
+  <link href="http://notquitebeta.github.io/"/>
+  <updated>2014-01-03T19:37:22-05:00</updated>
+  <id>http://notquitebeta.github.io/</id>
+  <author>
+    <name><![CDATA[NQB]]></name>
+    <email><![CDATA[feedback@notquitebeta.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Jekyll FAQs pt 2]]></title>
+    <link href="http://notquitebeta.github.io/2013/06/26/A_Jekyll_Manual2"/>
+    <updated>2013-06-26T21:34:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/06/26/A_Jekyll_Manual2</id>
+    <content type="html"><![CDATA[<p>I&rsquo;ve spent the last week or so filling out the contents of the FAQs.  It&rsquo;s taken most of my free time but I&rsquo;m almost done.  For formatting, I&rsquo;ve used Twitter Bootstrap extensively.  Its really nice.</p>
+
+<p>For the questions and answers, I tried to use collapsing panels so that someone can quickly scan questions because the answers can get so long that no one would make it past the third question.</p>
+
+<p>The original solution was to use HTML5&rsquo;s summary tag:</p>
+
+<pre><code>&lt;details class="q-and-a"&gt;
+  &lt;summary class="question"&gt;
+    &lt;strong&gt;
+    question1
+    &lt;/strong&gt;
+  &lt;/summary&gt;
+  &lt;p class="answer"&gt;answer&lt;/p&gt;
+&lt;/details&gt;
+&lt;p&gt;
+</code></pre>
+
+<p>The problem is that this works on Chrome and Safari but NOT on Firefox and IE.  While I would be fine with this in the regular world, at work, almost everyone uses IE.</p>
+
+<p>The solution was to further use Twitter Bootstrap&rsquo;s collapse class.
+The above code is now fixed like this:</p>
+
+<pre><code>&lt;div class="q-and-a"&gt;
+  &lt;div class="question" data-toggle="collapse" data-target="#demo"&gt;
+    &lt;strong&gt;
+    question2
+    &lt;/strong&gt;
+  &lt;/div&gt;
+  &lt;div id="demo" class="collapse"&gt;
+  &lt;p class="answer"&gt;answer&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>The new page (compared to the unformatted image from the last post) is shown below.  Question 1 uses the summary tag, question 2 uses Bootstrap solution, question 3 is the expanded view of the Bootstrap solution.</p>
+
+<p><img src="images/2013-06-26_FAQs2.png" alt="page image" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Jekyll FAQs]]></title>
+    <link href="http://notquitebeta.github.io/2013/06/17/A_Jekyll_Manual"/>
+    <updated>2013-06-17T21:47:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/06/17/A_Jekyll_Manual</id>
+    <content type="html"><![CDATA[<p>A quick diversion from Rails.  I wanted to make some static web pages with FAQs for different software packages.  There will be a page for each software package and a number of questions and answers will be listed on each page.  This is doable with plain HTML but I&rsquo;d like to try a few new tools.</p>
+
+<p>For the pages, I want to use <a href="http://jekyllrb.com/">Jekyll</a>.  Jekyll uses templating to create static pages.  This is a similar concept as that used in Rails, there you can have a layout and fill in specific parts of the common layout from different sources.  Why not use Rails?  If you don&rsquo;t administer the server, you may not have the ability to run a Rails app.  With static pages, if you have an accessible space for web pages, you are in business.</p>
+
+<p>To get going, I&rsquo;m following Jekyll&rsquo;s <a href="http://jekyllrb.com/docs/quickstart/">Quick-start Guide</a>.  After installing jekyll (<code>gem install jekyll</code>), you make a jekyll directory.  I&rsquo;m not sure why but most of these Ruby-based utilies fail when I use tcsh so, after switching to bash, you create a new project directory(<code>jekyll new FAQs</code>).</p>
+
+<p>Here is the initial directory tree:
+<code></p>
+
+<pre>
+├── _config.yml
+├── _layouts
+│   ├── default.html
+│   └── post.html
+├── _posts
+│   └── 2013-06-17-welcome-to-jekyll.markdown
+├── css
+│   ├── main.css
+│   └── syntax.css
+└── index.html
+</pre>
+
+
+<p></code></p>
+
+<p>Jekyll is popular for making blogs and <a href="http://octopress.org/">Octopress</a>, which I use for my blog, is built on top of Jekyll.</p>
+
+<p>&hellip;</p>
+
+<p>After about an hour and a half, I have the following directory tree:
+<code></p>
+
+<pre>
+├── _config.yml
+├── _includes
+│   ├── footer.html
+│   ├── header.html
+│   └── navigation.html
+├── _layouts
+│   ├── default.html
+│   └── page.html
+├── assets
+│   ├── css
+│   │   ├── bootstrap-responsive.css
+│   │   ├── bootstrap-responsive.min.css
+│   │   ├── bootstrap.css
+│   │   ├── bootstrap.min.css
+│   │   └── style.css
+│   └── js
+│       ├── bootstrap.js
+│       ├── bootstrap.min.js
+│       └── scripts.js
+├── css
+│   ├── main.css
+│   └── syntax.css
+├── index.html
+├── software1
+│   └── index.html
+├── software2
+│   └── index.html
+└── software3
+    └── index.html
+</pre>
+
+
+<p></code></p>
+
+<p>In <code>_includes</code>, I have a header.html that points to the <a href="http://twitter.github.io/bootstrap/">Twitter Bootstrap</a> .css and .js files.  The footer.html is a placeholder that just says footer.  navigation.html has a unordered list with home and links to software1-3.  I&rsquo;m hoping to use this for some navigation tabs or something.</p>
+
+<p>In <code>_layouts</code>, I created page.html.  This is the template I use for home and the three software pages.</p>
+
+<p>Assets contains the .css and .js files.  I have not used any of these for formatting the pages yet.</p>
+
+<p>Finally, each of the three software directories contian an index.html file which will contain the questions, answers to the questions, and code examples for the questions.</p>
+
+<p>Right now, everything is incredibly ugly but appears (roughly) functional.</p>
+
+<p><img src="images/2013-06-17-FAQs.png" alt="page image" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The deployment problem]]></title>
+    <link href="http://notquitebeta.github.io/2013/01/27/The_deployment_problem"/>
+    <updated>2013-01-27T00:00:00-05:00</updated>
+    <id>http://notquitebeta.github.io/2013/01/27/The_deployment_problem</id>
+    <content type="html"><![CDATA[<p>In the last few weeks, I’ve been continuing with <a href="http://www.amazon.com/gp/product/0321832051/ref=as_li_ss_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0321832051&amp;linkCode=as2&amp;tag=noqube-20">Ruby on Rails Tutorial</a>. I’m currently on chapter 5. It’s slow going, but I’m trying to follow along with examples. Not surprisingly, there’s been a few tangents along the way.</p>
+
+<p>The first chapter in the book discussed using <a href="http://en.wikipedia.org/wiki/Git_(software">Git</a>. This was nice because I tried to learn Git a few months ago and couldn’t quite get it working. I used the on-line book, <a href="http://git-scm.com/book">Pro-Git</a>, to learn Git but could quite wrap my head around it. Reading about Git in <a href="http://www.amazon.com/gp/product/0321832051/ref=as_li_ss_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0321832051&amp;linkCode=as2&amp;tag=noqube-20">Ruby on Rails Tutorial</a> helped because it walked through a specific use case that would be applicable to my workflow. This was a good intro to Git that then allowed me to better understand the use cases for Git described in <a href="http://git-scm.com/book">Pro-Git</a>. I’ve found this many times before, where I can’t follow the “basic” reference but need to get an “even more basic” reference. This gives me enough to then understand the “basic” reference.</p>
+
+<p>When I started learned Perl, Ruby, and Python, I would get the Learning {insert-language-here} book from O’Reilly. I never seem to get traction so I would get the shorter book from the PeachPit Quickstart series. A few hours with the PeachPit book would give me a sense of the syntax and general approach to the language (I can’t deny that this reminds me of how I liked picture books as a kid). Then, reading the Learning version of the language allows me to get started. The PeachPit book never seems to give a solid enough foundation to the language (for me) and it would just me a short-term memory version of the language. It’s like getting a few tools but not a toolbox. The Learning series (which is aimed at beginners), is too much and my mind would just start saying “blah, blah, blah” as I read. I’m not sure if it was over my head or I may just be too impatient to sit through the background, foundational basis of the language that is covered in the first chapters.</p>
+
+<p>In this same way, <a href="http://www.amazon.com/gp/product/0321832051/ref=as_li_ss_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0321832051&amp;linkCode=as2&amp;tag=noqube-20">Ruby on Rails Tutorial</a> gave me a start to Git but didn’t cover all the use cases that I would need. It was gear towards “type this to get this done.” However, this was enough to get me enough understanding to follow along in <a href="http://git-scm.com/book">Pro-Git</a>. In the end, I was able to set up Git repositories for some collaborative projects at work. I’m pretty glad Git was covered in the first chapter and snowballed into getting something productive done.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Projects]]></title>
+    <link href="http://notquitebeta.github.io/2013/01/07/Projects"/>
+    <updated>2013-01-07T00:00:00-05:00</updated>
+    <id>http://notquitebeta.github.io/2013/01/07/Projects</id>
+    <content type="html"><![CDATA[<p>You know how it is, there is always a bunch of things you want to learn. This may be better described as a bunch things you wish you knew. You may put it in a list. You may even start it. My favorite part is buying books, because even with Amazon Prime, it takes 2 days to get delivered. That’s about when my attention has moved on to something else. In the end, you look back months or years later and don’t feel like you got anything done. Maybe you don’t feel this way (I hope you don’t), but I usually do. So here is my To Do list (for now).</p>
+
+<p>I’ll describe what I’m planning to work on here and why. This post may be a bit long. I’ll put a table up to track projects on the blog as well. It will live here in the <a href="http://notquitebeta.com/?page_id=26">Projects</a> tab.</p>
+
+<h2>A little background</h2>
+
+<p>A year and a half ago, I started playing around with Ruby. It is Ruby’s philosophy to be fun and it was. It dethroned Perl as my go-to language pretty quickly. This isn’t to say I know what I’m doing, just that I can get some things done with it.</p>
+
+<p>A few months ago, I started playing with Python. This is because Python has been more adopted into the scientific community. I’m not sure why, but it may be because it interacts we with C. One thing I do know is that some folks I like on the Internet like <a href="http://macdrifter.com/">Macdrifter</a>, <a href="http://www.leancrew.com/all-this/">Dr. Drang</a>, and <a href="http://brettterpstra.com/">Brett Terpstra</a> use Python (although Brett is a solid Ruby guy).</p>
+
+<p>Python is supposed to have the advantage that it is easier to read. I think this is generally true compared to Perl. It may be as well versus Ruby but I tend to be poor at commenting my code, so nothing is easy to read. <strong>I’m really working on improving the commenting.</strong> Part of the commenting problem is that I never wrote code expecting others to read it. This isn’t the only reason to comment because I usually can’t figure out my own code. Recently, I worked with coworker on a project and I put effort into commenting. It definitely made a difference for me.</p>
+
+<h2>So what’s the plan?</h2>
+
+<h2>Programming Web Apps</h2>
+
+<ul>
+<li><p>I’d like to learn <strong>Ruby on Rails</strong>. All of my Ruby has been used in command line scripts. Rails would make applications accessible via a web browser, provide a graphical interface, but still allow access to underlying hooks into the system, if necessary (admittedly, I may have a naive understanding of how it works).</p></li>
+<li><p>After getting a basic understanding of Rails, I’d like to try a little Django. Since I’ve been trying Python, if I switch to it from Ruby, it may be easier to use <strong>Django</strong> than Rails in the long run.</p></li>
+</ul>
+
+
+<h2>HTML</h2>
+
+<ul>
+<li><p>Saying <strong>HTML</strong> above is not really right. Yes, HTML is on the list. I’m still using HTML from the 90′s. Is that HTML1? We’re only on 5 now. But I really mean all the other stuff that goes to making a good (good may be too strong a word) website.</p></li>
+<li><p><strong>CSS</strong>: I don’t know what it is but it seems important. No, just kidding. I learned a little about Style Sheets when through the tutorials on Codecademy last spring. At the time, it made sense but without following up with practice, it wasn’t going to stick.</p></li>
+<li><p><strong>Javascript and JQuery</strong>: I don’t know how much I’ll need them but I’m going to put them on the list. Are they even different things? So much to learn, Grasshopper.</p></li>
+<li><p><strong>Responsive Design</strong>: What little I know seems to indicate that this is not mutually exclusive to the previous items. I don’t know if there are different the ways of implementing it, but I’d like the web pages/apps that I put together to be usable on different platforms.</p></li>
+</ul>
+
+
+<h2>Design</h2>
+
+<p>Man, I just don’t get Design. I’ve never paid attention to style, fashion, or trends. If it wasn’t for my wife, I’d still be wearing just black and gray because I couldn’t get anything else match. As I’m getting older, I’m trying not to rush through things as much, to stop and smell the roses a bit.</p>
+
+<p>On the more practical side, I do appreciate the utility of making things easier to understand and use. For example, I’m quite good at writing scripts that take a bunch of arguments to run. Those scripts are only usable while the arguments needed are still in short term memory. Two days later and I have to rewrite the script because I can’t get it to work again (please note the poor commenting mentioned above).</p>
+
+<p>All and all, it’s not about making something that will work. It’s about making something that is useful. Making a helicopter that no one can fly is not more useful than making a can opener that everyone can use.</p>
+
+<h2>In Summary (let’s wrap it up already)</h2>
+
+<p>All together, these all have to goal of allowing me to build tools that can be controlled by a web interface. I see this as being useful for geeking out at work as well as the potential for uses at home (e.g. one of the first projects I’d like to build is a basic Grocery List).</p>
+
+<h2>P.S.</h2>
+
+<p>I’d like to learn <strong>Objective-C</strong>. My goal is not to write the next Angry Birds. My wife will attest to the fact that I’m probably allergic to money. This is also evident from my being in school until my 30′s, making below minimum wage, and following that up with even more training as a Postdoc.</p>
+
+<p>I see learning Objective-C as similar to learning to build web-based applications. It just makes it easier to interact with the underlying code, making it more usable and possibly more portable.</p>
+]]></content>
+  </entry>
+  
+</feed>

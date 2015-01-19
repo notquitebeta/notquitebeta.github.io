@@ -1,0 +1,611 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Not Quite Beta</title>
+  <meta name="author" content="NQB">
+
+  
+  <meta name="description" content="This is a quick update post. Since my son has started waking up between 2 and 4 a.m. on a regular basis, my regular schedule to work on the computer &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://notquitebeta.github.io/blog/page/5">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Not Quite Beta" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Merriweather+Sans|PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<script src="//use.edgefonts.net/tangerine;lato:n1,i1,n3,i3,n4,i4,n7,i7,n9,i9:all;cousine:n4,i4,n7,i7:all;lora:n4,i4,n7,i7:all.js"></script>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-41215298-1 ']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Not Quite Beta</a></h1>
+  
+    <h2>9990 hours to mastery</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:notquitebeta.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2013/03/05/Sleep">Sleep</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-05T00:00:00-05:00" pubdate data-updated="true">Mar 5<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This is a quick update post. Since my son has started waking up between 2 and 4 a.m. on a regular basis, my regular schedule to work on the computer after he goes to sleep required adjustment. Going to sleep and waking 3 hours later started to impact the rest of the day. To accommodate his schedule, I’ve shifted to going to sleep as early as possible so when he wakes, I would stay up to read. There has been a few good sessions of reading at 3 to 5 in the morning. As a result or the new schedule, I’ve also shifted to a mode that involved more reading instead of working on the computer. Sometimes, you just have to roll with the punches of life.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2013/02/04/The_deployment_problem2">The Deployment Problem, Part2</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-04T00:00:00-05:00" pubdate data-updated="true">Feb 4<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Throughout this process of learning Rails and thinking about deploying web apps, a constant question has been how to run the web app on a system which is administered by someone else. A large part of my goal for developing web apps has been to use it at work, where I have space on the server but do not have admin privileges. The web pages are on systems likely served by an Apache web server. Since it also serves many other pages and is a production server, I would prefer not to need to edit the servers config file or reboot the server when I change something.</p>
+
+<p>We’ll see how Rails handles this. In worrying about this, I look a quick glance Django. I skimmed the online resource, www.djangobook.com. In the book, Chapter 12 appears to have a workaround that allows Apache to spawn a process for handling a Django web app. The section is titled, “Running Django on a Shared-Hosting Provider with Apache,” which sound like the situation that I will be facing.</p>
+
+<p>One final observation of Rails vs Django (based on the past few hours of skimming) is that Django looks like python. Rails looks like Rails, with some resemblance to Ruby. Being written in Ruby doesn’t mean knowing Ruby helps, like knowing C doesn’t allow someone to understand every program every written in C. I don’t mean to imply any inferiority in the Rails approach. In many ways, this may make it easier to implement because it’s freed of its strong ties to programming in Ruby. These are my first, and admittedly uninformed, initial impressions of Rails and Django.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2013/02/04/Shouldn%E2%80%99t_it_be_easier_Python_DB_modules">Shouldn’t It Be Easier? (Python DB Modules)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-04T00:00:00-05:00" pubdate data-updated="true">Feb 4<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p> was hoping to put a quick Django web app together tonight (“was”). I just wanted to get a feel for the architecture. Well, the problem was that I foolishly thought I would download and install Database modules for Oracle and MySQL, since those would be the common production databases that I may use at home or at work. What, download, untar, run “python setup.py buildl python setup.py install.” Done, right? Big mistake.</p>
+
+<p>Apparently, the last Oracle release for OsX was version 10g Rel2, which is no longer available for download. A hint here is that other links on this page reference software for Os 10.5 (currently, I’m running 10.8.2). The Oracle module, cx_Oracle, seems to need an Oracle software installation in order to build. Maybe there are library requirements but it seems that it should be independently buildable since you may need to connect to a remote Oracle database.</p>
+
+<p>Ok, maybe I’ll go to MySQL, not ideal but a surrogate for Oracle. Hmmm, apparently not. The hamster wheel of the last 3 hours can be summarized by a stackoverflow post here. The only difference is it seemed to work for the folks posting but I’ve given up.</p>
+
+<p>Shouldn’t it be easier?</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2013/01/27/The_deployment_problem">The Deployment Problem</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-27T00:00:00-05:00" pubdate data-updated="true">Jan 27<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>In the last few weeks, I’ve been continuing with <a href="http://www.amazon.com/gp/product/0321832051/ref=as_li_ss_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0321832051&amp;linkCode=as2&amp;tag=noqube-20">Ruby on Rails Tutorial</a>. I’m currently on chapter 5. It’s slow going, but I’m trying to follow along with examples. Not surprisingly, there’s been a few tangents along the way.</p>
+
+<p>The first chapter in the book discussed using <a href="http://en.wikipedia.org/wiki/Git_(software">Git</a>. This was nice because I tried to learn Git a few months ago and couldn’t quite get it working. I used the on-line book, <a href="http://git-scm.com/book">Pro-Git</a>, to learn Git but could quite wrap my head around it. Reading about Git in <a href="http://www.amazon.com/gp/product/0321832051/ref=as_li_ss_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0321832051&amp;linkCode=as2&amp;tag=noqube-20">Ruby on Rails Tutorial</a> helped because it walked through a specific use case that would be applicable to my workflow. This was a good intro to Git that then allowed me to better understand the use cases for Git described in <a href="http://git-scm.com/book">Pro-Git</a>. I’ve found this many times before, where I can’t follow the “basic” reference but need to get an “even more basic” reference. This gives me enough to then understand the “basic” reference.</p>
+
+<p>When I started learned Perl, Ruby, and Python, I would get the Learning {insert-language-here} book from O’Reilly. I never seem to get traction so I would get the shorter book from the PeachPit Quickstart series. A few hours with the PeachPit book would give me a sense of the syntax and general approach to the language (I can’t deny that this reminds me of how I liked picture books as a kid). Then, reading the Learning version of the language allows me to get started. The PeachPit book never seems to give a solid enough foundation to the language (for me) and it would just me a short-term memory version of the language. It’s like getting a few tools but not a toolbox. The Learning series (which is aimed at beginners), is too much and my mind would just start saying “blah, blah, blah” as I read. I’m not sure if it was over my head or I may just be too impatient to sit through the background, foundational basis of the language that is covered in the first chapters.</p>
+
+<p>In this same way, <a href="http://www.amazon.com/gp/product/0321832051/ref=as_li_ss_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0321832051&amp;linkCode=as2&amp;tag=noqube-20">Ruby on Rails Tutorial</a> gave me a start to Git but didn’t cover all the use cases that I would need. It was gear towards “type this to get this done.” However, this was enough to get me enough understanding to follow along in <a href="http://git-scm.com/book">Pro-Git</a>. In the end, I was able to set up Git repositories for some collaborative projects at work. I’m pretty glad Git was covered in the first chapter and snowballed into getting something productive done.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2013/01/10/One_step_forward%2C_two_steps_back">One Step Forward, Two Steps Back</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-10T00:00:00-05:00" pubdate data-updated="true">Jan 10<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>First, there was <strong>Learning Rails</strong>. Then, there was <a href="http://guides.rubyonrails.org/getting_started.html">RailsGuides</a>. Now, there’s <a href="http://www.amazon.com/gp/product/0321832051/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;tag=noqube-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0321832051">Ruby on Rails Tutorial</a>. I mentioned how lost I was after the first 100 pages of Learning Rails. With the RailsGuide, I was taking to opposite approach and typing along with the instructions. BUT, something happened and I ran into a error.</p>
+
+<p>The Railsguide tutorial is based on building a Blog web app. The first part was fine and I was able to add and view posts. The second part moves to adding comments that are associated to each post. This consists of the following steps:</p>
+
+<p>1) Generate the model for Comments
+2) Migrate the database
+3) Edit config/routes.rb
+4) Generate a comments controller.
+5) Edit show.html.erb to display the comment fields.
+6) Add a method for creating comments in the controller</p>
+
+<p>That was enough to mess up the app. I went back and undid those steps that involved editing a file (not generating or migrating) and it was working again, but when I added lines based on the tutorial, it failed again. The tutorial generally explains what the different steps are doing but it was not enough to teach me to troubleshoot the error.</p>
+
+<p>So now, I need to find another source from which to learn enough Rails to fix this problem, which will, in turn, explain enough to allow me to read the Learning Rails book. Right now, I feel like I’m further behind than when I started. I’m posting this in case someone else feels this way to motivate them to keep going (assuming that I dig myself out of this hole).</p>
+
+<p>I looked on Amazon and got the kindle edition of a book called <a href="http://www.amazon.com/gp/product/0321832051/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;tag=noqube-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0321832051">Ruby on Rails Tutorial</a>. What was appealing about this book is that it is described to teach all aspects of developing a Ruby on Rails application. This includes teaching other aspects like HTML, CSS, and using git. So the book should covers other topics on the Projects list, which would be great. Another positive is that this book is that it is less than half a year old so it’s running Rails3.</p>
+
+<p>The downside is the size of the book, which is listed as containing 600 pages in the print edition. My favorite programming book was Learning Perl from O’Reilly because it was less than 200 pages. It was short enough to requite only a mini-iota of discipline to finish. Optimistically, there will be enough different topics for developing with Rails to keep my attention through 600 pages (or at least enough to get a basic understanding of Rails). We will see.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2013/01/08/Getting_started_with_Rails">Getting Started With Rails</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-08T00:00:00-05:00" pubdate data-updated="true">Jan 8<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="/images/20130107-203838.jpg" alt="rails_image" /></p>
+
+<p>Over the holidays, I started trying to learn Ruby on Rails. I’m using an old O’Reilly book, Learning Rails, published in 2008. It was just sitting on my bookshelf. This is a perfect example of not getting to something. I’m not going to link the book because there is likely a more up-to-date book someone should use.</p>
+
+<p>Like most attempt to learn programming, I read a good bit of the book without ever touching a computer (I never learn). I just was not getting how it worked.</p>
+
+<p>After installing Rails, I went to a web tutorial at <a href="http://guides.rubyonrails.org/getting_started.html">rubyonrails.org</a>. I think the two methods together are helpful because it’s always hard for me to tell what’s important, but if both mention something, it increases the probability of it being important.</p>
+
+<p>Over the next week, I plan to finish the Blog web app example described on the rubyonrails.org tutorial. Then, I would like to build two apps.</p>
+
+<ol>
+<li>A ToDo app</li>
+<li>A Grocery List app</li>
+</ol>
+
+
+<p>I’m hoping lighting doesn’t strike twice in the same place. By this, I mean, if I can get the two apps written, no matter how ugly they are, I would have a sense for how Rails works. The next post may be a while.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2013/01/07/Projects">Projects</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-07T00:00:00-05:00" pubdate data-updated="true">Jan 7<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>You know how it is, there is always a bunch of things you want to learn. This may be better described as a bunch things you wish you knew. You may put it in a list. You may even start it. My favorite part is buying books, because even with Amazon Prime, it takes 2 days to get delivered. That’s about when my attention has moved on to something else. In the end, you look back months or years later and don’t feel like you got anything done. Maybe you don’t feel this way (I hope you don’t), but I usually do. So here is my To Do list (for now).</p>
+
+<p>I’ll describe what I’m planning to work on here and why. This post may be a bit long. I’ll put a table up to track projects on the blog as well. It will live here in the <a href="http://notquitebeta.com/?page_id=26">Projects</a> tab.</p>
+
+<h2>A little background</h2>
+
+<p>A year and a half ago, I started playing around with Ruby. It is Ruby’s philosophy to be fun and it was. It dethroned Perl as my go-to language pretty quickly. This isn’t to say I know what I’m doing, just that I can get some things done with it.</p>
+
+<p>A few months ago, I started playing with Python. This is because Python has been more adopted into the scientific community. I’m not sure why, but it may be because it interacts we with C. One thing I do know is that some folks I like on the Internet like <a href="http://macdrifter.com/">Macdrifter</a>, <a href="http://www.leancrew.com/all-this/">Dr. Drang</a>, and <a href="http://brettterpstra.com/">Brett Terpstra</a> use Python (although Brett is a solid Ruby guy).</p>
+
+<p>Python is supposed to have the advantage that it is easier to read. I think this is generally true compared to Perl. It may be as well versus Ruby but I tend to be poor at commenting my code, so nothing is easy to read. <strong>I’m really working on improving the commenting.</strong> Part of the commenting problem is that I never wrote code expecting others to read it. This isn’t the only reason to comment because I usually can’t figure out my own code. Recently, I worked with coworker on a project and I put effort into commenting. It definitely made a difference for me.</p>
+
+<h2>So what’s the plan?</h2>
+
+<h2>Programming Web Apps</h2>
+
+<ul>
+<li><p>I’d like to learn <strong>Ruby on Rails</strong>. All of my Ruby has been used in command line scripts. Rails would make applications accessible via a web browser, provide a graphical interface, but still allow access to underlying hooks into the system, if necessary (admittedly, I may have a naive understanding of how it works).</p></li>
+<li><p>After getting a basic understanding of Rails, I’d like to try a little Django. Since I’ve been trying Python, if I switch to it from Ruby, it may be easier to use <strong>Django</strong> than Rails in the long run.</p></li>
+</ul>
+
+
+<h2>HTML</h2>
+
+<ul>
+<li><p>Saying <strong>HTML</strong> above is not really right. Yes, HTML is on the list. I’m still using HTML from the 90′s. Is that HTML1? We’re only on 5 now. But I really mean all the other stuff that goes to making a good (good may be too strong a word) website.</p></li>
+<li><p><strong>CSS</strong>: I don’t know what it is but it seems important. No, just kidding. I learned a little about Style Sheets when through the tutorials on Codecademy last spring. At the time, it made sense but without following up with practice, it wasn’t going to stick.</p></li>
+<li><p><strong>Javascript and JQuery</strong>: I don’t know how much I’ll need them but I’m going to put them on the list. Are they even different things? So much to learn, Grasshopper.</p></li>
+<li><p><strong>Responsive Design</strong>: What little I know seems to indicate that this is not mutually exclusive to the previous items. I don’t know if there are different the ways of implementing it, but I’d like the web pages/apps that I put together to be usable on different platforms.</p></li>
+</ul>
+
+
+<h2>Design</h2>
+
+<p>Man, I just don’t get Design. I’ve never paid attention to style, fashion, or trends. If it wasn’t for my wife, I’d still be wearing just black and gray because I couldn’t get anything else match. As I’m getting older, I’m trying not to rush through things as much, to stop and smell the roses a bit.</p>
+
+<p>On the more practical side, I do appreciate the utility of making things easier to understand and use. For example, I’m quite good at writing scripts that take a bunch of arguments to run. Those scripts are only usable while the arguments needed are still in short term memory. Two days later and I have to rewrite the script because I can’t get it to work again (please note the poor commenting mentioned above).</p>
+
+<p>All and all, it’s not about making something that will work. It’s about making something that is useful. Making a helicopter that no one can fly is not more useful than making a can opener that everyone can use.</p>
+
+<h2>In Summary (let’s wrap it up already)</h2>
+
+<p>All together, these all have to goal of allowing me to build tools that can be controlled by a web interface. I see this as being useful for geeking out at work as well as the potential for uses at home (e.g. one of the first projects I’d like to build is a basic Grocery List).</p>
+
+<h2>P.S.</h2>
+
+<p>I’d like to learn <strong>Objective-C</strong>. My goal is not to write the next Angry Birds. My wife will attest to the fact that I’m probably allergic to money. This is also evident from my being in school until my 30′s, making below minimum wage, and following that up with even more training as a Postdoc.</p>
+
+<p>I see learning Objective-C as similar to learning to build web-based applications. It just makes it easier to interact with the underlying code, making it more usable and possibly more portable.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2013/01/06/First_things_first%2C_the_web_page">First Things First, the Web Page</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-06T00:00:00-05:00" pubdate data-updated="true">Jan 6<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>The last web page I made was in the 90’s. In school, all users are assigned a webpage using the ~ subdirectory. You could just type text into a page called index.html and you’re done.</p>
+
+<p>This time around, I did the following</p>
+
+<h2>Registered a domain name.</h2>
+
+<ul>
+<li>I used <a href="http://notquitebeta.com/www.hover.com">Hover</a> to register my website. Hover was chosen because they advertise on some of my favorite podcasts on the <a href="http://notquitebeta.com/5by5.tv">5by5</a> network. There was a promo code on the <a href="http://5by5.tv/partners/hover">site</a>. I should mention that I am not affiliated with the 5by5 network, I just like their podcasts.</li>
+</ul>
+
+
+<h2>Found a web hosting site</h2>
+
+<ul>
+<li>The site is hosted on <a href="http://www.webfaction.com/?affiliate=nqb">Webfaction</a>. The link for Webfaction is an affiliate link where I get a credit you use it and sign up. You should feel free to go straight to the site if you would like to sign up.</li>
+<li>The reason I chose Webfaction was because it had a lot of installable applications, more specifically Rails and Django, which I have as goals to explore.</li>
+<li>I stumbled on Webfaction reading the <a href="http://www.macdrifter.com/">Macdrifter blog</a> and it seemed to be well <a href="http://www.macdrifter.com/2012/05/webfaction-and-pingdom.html">reviewed</a>. Again, I’m not affiliated with Macdrifter used it’s affiliate link to register because I enjoy the blog and listening to the <strong>Generational</strong> podcast that Gabe hosts.</li>
+<li>This blog runs off the WordPress Application that I got running in a few hours of mucking around.</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2013/01/05/This_Site">This Site</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-05T00:00:00-05:00" pubdate data-updated="true">Jan 5<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>In the event you are reading this blog (and you are not me), let me tell you about this blog. This will be part journal, part todo list, and part bookmark list. Wha?</p>
+
+<p>Let me give you a little background. I <strong>love</strong> computers! My parents got an Apple II back in the 70′s and I got into Basic back in the day. I learned Pascal in high school (forgot it) and Scheme and Lisp in college (forgot it) and built all models of PC’s form the XT to Pentiums. It was all fun, but I never pursued a career in computers. I became a scientist instead, which was and is still fun, but always dabbled with computers. I used Unix, then Linux, in the 90′s until OsX came out on the Mac and programming in Perl when I could. Not surprisingly, as I moved deeper into science, the moved further away from computers and struggled to keep a toe in the programming waters.</p>
+
+<p>Now, I’d like to get back into computers, not as a career, but catching up on tools, since I made my last website in the 90′s (it was full of day-glo colors with blinky text and animated gifs).</p>
+
+<p>Here it is, the reason for this site. I know I’m not the only person in a situation like this. I know there are people out there in the same boat. I’m going to try to keep track of what I’m learning and my progress here so that the weeds are hacked down in case anyone wants to take part of the same trail. I want others to feel that this is a friendly place to discuss computers and learning. Let’s keep things positive and encouraging. The pace is not going to be quick since I try to spend time with my wonderful wife, awesome, high energy, young son, and a wonderful dog that really likes attention. That said, let’s get something done. <strong>Here we go!</strong></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/4/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>About Me</h1>
+  <p>I loved computers since my parents got an Apple II back in the 70′s. I never pursued a career in computers becoming a scientist instead.  Fun as it is, I struggled to find time to get tech-geeky. Here, I’ll track of my tech dabblings.</p>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2013/11/30/A_Javascript_Mobile_template">A Javascript Mobile Template</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/11/17/Javascript">A Voyage into Javascript</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/10/26/Codeschool_and_Halloween">Codeschool and Halloween</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/10/07/Getting_Started_with_Meteor">Getting Started With Meteor.js</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/09/28/The_beginnings_of_Javascript">The beginnings of Javascript</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+<h2>twitter</h2>
+<a href="https://twitter.com/NotQuiteBeta" class="twitter-follow-button" data-show-count="true" data-lang="en">Follow @NotQuiteBeta</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<div class="tweet" data-twitter-user="NotQuiteBeta">
+</div>
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - NQB -
+  <span class="credit">Powered by the awesome <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

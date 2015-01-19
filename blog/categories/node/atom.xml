@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Node | Not Quite Beta]]></title>
+  <link href="http://notquitebeta.github.io/blog/categories/node/atom.xml" rel="self"/>
+  <link href="http://notquitebeta.github.io/"/>
+  <updated>2014-01-03T19:37:22-05:00</updated>
+  <id>http://notquitebeta.github.io/</id>
+  <author>
+    <name><![CDATA[NQB]]></name>
+    <email><![CDATA[feedback@notquitebeta.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[A Voyage into Javascript]]></title>
+    <link href="http://notquitebeta.github.io/2013/11/17/Javascript"/>
+    <updated>2013-11-17T18:00:00-05:00</updated>
+    <id>http://notquitebeta.github.io/2013/11/17/Javascript</id>
+    <content type="html"><![CDATA[<p>I don&rsquo;t mean to sound like an advertisement for Codeschool (I&rsquo;m not affiliated with them), but I took the lesson on Node.js.  It was eyeopening, mostly because it gave me a sense of empowerment.  It used Express for routing, Redis as a database, and Socket to push information.  Basically, this is much of the appear for a packaged system like Meteor.  It also sparked ideas of how to implement tools.  For example, with Node and Express, I can push information from my system to another system&rsquo;s browser through a RESTful interface.  At work (can&rsquo;t display the code), I was able to build an interface for a tool using HTML, CSS, and JQuery (with Ajax calls) to a server running Node and Express, serving the desired information.  This worked pretty well.  Additionally, the front end was made responsive with CSS media queries.</p>
+
+<p>It only took a few days to put this together and a couple more for tweaking it to work correctly.  Overall, it took 3 weeks, although after the first week and a half, my efforts were split with a second project.</p>
+
+<p>The second project was to make a page/Webapp that lets me enter data and save it to a database in a form.  There are three major views, a list view, a reading view, and an editing view.  This was my chance to try Meteor.js.  I was able to put together eveything but it wasn&rsquo;t a pleasant experience (admittedly, it would probably be better if I was used to the parts of Meteor though, particularly Handlebars.js).  I thought there was a lot of unnecessarily duplicated code because Handlebars didn&rsquo;t have loops like other languages. I also don&rsquo;t have the proper subscription/publishing of data set up.</p>
+
+<p>It&rsquo;s been a lot of fun hacking away at it.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The beginnings of Javascript]]></title>
+    <link href="http://notquitebeta.github.io/2013/09/28/The_beginnings_of_Javascript"/>
+    <updated>2013-09-28T20:35:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/09/28/The_beginnings_of_Javascript</id>
+    <content type="html"><![CDATA[<p>It&rsquo;s taking some balancing to learn a little Javascript, a little node, and a little Meteor.  I finished the book, <a href="http://www.amazon.com/dp/0470647833/?tag=noqube-20">JavaScript 24-Hour Trainer, by Jeremy McPeak</a> a few weeks ago and forgot almost everything.  I had taken notes in the Moleskine that my wife got me for Christmas and loaded it into Evernote.  That was nice to have access to it from everywhere and it was sort of searchable based on whether my writing was legible, but I didn&rsquo;t have it in NVAlt, the one unified place where I put code.  NVAlt is nice because I can access it with Simplenote on my phone and it is quite searchable.  I took a few hours to transcribe notes from Evernote to NVAlt which proved to be a nice refresher.</p>
+
+<p>I also had the opportunity to write my first Node script.  It was just a few lines that requested a list of projects and then looked for entries in each project.  What I liked was that it did this asynchonously (or is it non-blocking? (or the computer was acting fast that day)).  What it does is query for a list of projects, then for each project, it sendsa q request for information, printing the information when it is retreived.  The non-blocking characteristic of Node makes it fast because it doesn&rsquo;t wait for the information to return before sending a request for the next project.  Instead, as soon as a request is sent, it goes ahead and moves to send the next request.  The program takes care of things when the information is returned, whenever it returns.  I think this will have benefits when there becomes many more entries for each project because all the requests are out at once, not waiting to run serially.  It&rsquo;s like when a King sends his four fastest ships out to find someone instead of sending one ship out at a time. (Yes, just like that).</p>
+]]></content>
+  </entry>
+  
+</feed>

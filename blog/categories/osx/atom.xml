@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: OsX | Not Quite Beta]]></title>
+  <link href="http://notquitebeta.github.io/blog/categories/osx/atom.xml" rel="self"/>
+  <link href="http://notquitebeta.github.io/"/>
+  <updated>2014-01-03T19:37:22-05:00</updated>
+  <id>http://notquitebeta.github.io/</id>
+  <author>
+    <name><![CDATA[NQB]]></name>
+    <email><![CDATA[feedback@notquitebeta.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Tree for OsX]]></title>
+    <link href="http://notquitebeta.github.io/2013/05/12/Tree_for_OSX"/>
+    <updated>2013-05-12T21:53:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/05/12/Tree_for_OSX</id>
+    <content type="html"><![CDATA[<p>One function I always need to manually install when I move to a new computer is tree.  When you run tree, you get a listing of all subdirectories and files within a given directory.</p>
+
+<p>Here is a <a href="http://shaunchapman.me/post/329270449/how-to-install-the-tree-command-on-mac-os-x">link to a nice install for OsX</a>.  I&rsquo;m putting it here so that I can find the link.  Big thanks for Shaun Chapman.</p>
+]]></content>
+  </entry>
+  
+</feed>

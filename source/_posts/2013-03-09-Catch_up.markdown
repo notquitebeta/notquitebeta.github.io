@@ -1,0 +1,32 @@
+---
+layout: page
+title: "Catch up"
+date: 2013-03-09 00:00
+comments: false
+sharing: true
+footer: true
+categories: Objective-C
+---
+Chapters 3 & 4 / 37
+
+Chapter 3 was nice and short, introducing variables. Mostly, it’s getting the syntax since variables are like variables from other languages.
+
+Chapter 4 introduced if/else statements. There were some syntax elements to remember. For example, the if clause is like:
+
+if (condition1) {
+Do this;
+} else if (condition2) {
+Do this instead;
+} else {
+Ok, do this;
+}
+
+I never remember how else if is used switching between different shells and scripting languages.
+
+Also, it seems like c uses || and && but not ‘or’ or ‘and’. I’m hoping Xcode with catch those since those mistakes will happen often.
+
+I like that c had ternary operators.
+
+int value = conditional ? value_true : value_false
+
+Also, there wasn’t a programming assignment in chapter 4 which made it easy to read away from the computer.

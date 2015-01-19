@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Meteor | Not Quite Beta]]></title>
+  <link href="http://notquitebeta.github.io/blog/categories/meteor/atom.xml" rel="self"/>
+  <link href="http://notquitebeta.github.io/"/>
+  <updated>2014-01-03T19:37:22-05:00</updated>
+  <id>http://notquitebeta.github.io/</id>
+  <author>
+    <name><![CDATA[NQB]]></name>
+    <email><![CDATA[feedback@notquitebeta.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[A Voyage into Javascript]]></title>
+    <link href="http://notquitebeta.github.io/2013/11/17/Javascript"/>
+    <updated>2013-11-17T18:00:00-05:00</updated>
+    <id>http://notquitebeta.github.io/2013/11/17/Javascript</id>
+    <content type="html"><![CDATA[<p>I don&rsquo;t mean to sound like an advertisement for Codeschool (I&rsquo;m not affiliated with them), but I took the lesson on Node.js.  It was eyeopening, mostly because it gave me a sense of empowerment.  It used Express for routing, Redis as a database, and Socket to push information.  Basically, this is much of the appear for a packaged system like Meteor.  It also sparked ideas of how to implement tools.  For example, with Node and Express, I can push information from my system to another system&rsquo;s browser through a RESTful interface.  At work (can&rsquo;t display the code), I was able to build an interface for a tool using HTML, CSS, and JQuery (with Ajax calls) to a server running Node and Express, serving the desired information.  This worked pretty well.  Additionally, the front end was made responsive with CSS media queries.</p>
+
+<p>It only took a few days to put this together and a couple more for tweaking it to work correctly.  Overall, it took 3 weeks, although after the first week and a half, my efforts were split with a second project.</p>
+
+<p>The second project was to make a page/Webapp that lets me enter data and save it to a database in a form.  There are three major views, a list view, a reading view, and an editing view.  This was my chance to try Meteor.js.  I was able to put together eveything but it wasn&rsquo;t a pleasant experience (admittedly, it would probably be better if I was used to the parts of Meteor though, particularly Handlebars.js).  I thought there was a lot of unnecessarily duplicated code because Handlebars didn&rsquo;t have loops like other languages. I also don&rsquo;t have the proper subscription/publishing of data set up.</p>
+
+<p>It&rsquo;s been a lot of fun hacking away at it.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Refocusing]]></title>
+    <link href="http://notquitebeta.github.io/2013/07/08/Refocusing"/>
+    <updated>2013-07-08T19:06:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/07/08/Refocusing</id>
+    <content type="html"><![CDATA[<p>The last two weeks have been spent on trying to learn R, a statistical programming language, Meteor, a javascript-based reactive web app programming language, building the FAQ pages, and a little further exploration of Git.</p>
+
+<p>Learning Meteor was interesting but I found that I didn&rsquo;t know enough javascript to know where javascript ended and Meteor began. I got the book, Learning Meteor, but found that when thing didn&rsquo;t work, I didn&rsquo;t know enough to troubleshoot it.</p>
+
+<p>I think I&rsquo;m at a good stopping point for R, the FAQ, and Git. Meteor really requires further knowledge if Javascript so I think that is what will be where I focus the next few weeks.</p>
+
+<p>If I can get rolling on Rails again, I may be able to do it in parallel with Javascript. It seems like javascript is a fundamental language I need learn with CSS. Then, whether l go with Rails, Meteor, or an iPhone objective-c web app, I have a more solid foundation.</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,659 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Not Quite Beta</title>
+  <meta name="author" content="NQB">
+
+  
+  <meta name="description" content="The repeating title/first line problem can now be resolved by substituting the last line of the file. [[draft]] -&gt; [[body]] The final template &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://notquitebeta.github.io/blog/page/3">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Not Quite Beta" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Merriweather+Sans|PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<script src="//use.edgefonts.net/tangerine;lato:n1,i1,n3,i3,n4,i4,n7,i7,n9,i9:all;cousine:n4,i4,n7,i7:all;lora:n4,i4,n7,i7:all.js"></script>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-41215298-1 ']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Not Quite Beta</a></h1>
+  
+    <h2>9990 hours to mastery</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:notquitebeta.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2013/05/09/The_fix">The Fix</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-09T20:11:00-04:00" pubdate data-updated="true">May 9<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>The repeating title/first line problem can now be resolved by substituting the last line of the file.</p>
+
+<pre><code> [[draft]] -&gt; [[body]]
+</code></pre>
+
+<p>The final template:</p>
+
+<pre><code>---
+layout: page
+title: [[title]]
+date: [[date|%Y-%m-%d %H:%M]]
+comments: false
+sharing: true
+footer: true
+categories:
+---
+[[body]]
+</code></pre>
+
+<p>Whew.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2013/05/09/Using_Drafts_to_Blog">Using Drafts to Blog</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-09T19:54:00-04:00" pubdate data-updated="true">May 9<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I think I have it set correctly. The only problem I currently have is that the title is repeated as the first line of the blog.</p>
+
+<p>The draft is types as in markdown format. Then, I have an action called &ldquo;New Blog Post.&rdquo;  It is set up to put the draft into my _Posts directory.</p>
+
+<p>The file name is predefined as
+<code>[[date]]-[[title]]</code>
+with a markdown extension.</p>
+
+<p>The template is:</p>
+
+<pre><code>---
+layout: page
+title: [[title]]
+date: [[date|%Y-%m-%d %H:%M]]
+comments: false
+sharing: true
+footer: true
+categories:
+---
+[[draft]]
+</code></pre>
+
+<p>The first line, the title, is used for the file name and title of the post. The date in the file name just uses the <code>[[date]]</code> tag from Drafts. The date in the header is customized using <a href="http://www.tutorialspoint.com/python/time_strftime.htm">strftime</a>.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2013/05/09/Replacing_the_blogging_workflow">Replacing the Blogging Workflow.</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-09T19:25:00-04:00" pubdate data-updated="true">May 9<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Switching from Wordpress was an easy decision. The question is now how to work blogging into my workflow. Most of my posts have been made using my phone using the Wordpress App. There isn&rsquo;t an Octopress App.</p>
+
+<p>Since my local Octopress install is on Dropbox, I am using the Drafts App to write and I set up an action to put the message in the posts folder in the Octopress install in my Dropbox folder.</p>
+
+<p>If the current action works, I would just need to generate the pages and deploy on the site. While these are currently manual, it could be placed on a schedule.  I don&rsquo;t do this because it&rsquo;s sitting on my laptop which isn&rsquo;t always on. If I put this on an always-on system, I would instead probably use a script that looks for new files in the posts folder and automatically triggers a generate and deploy.</p>
+
+<p>First thing&rsquo;s first, let&rsquo;s see if the Drafts action works.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2013/05/09/Octopress">Octopress</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-09T04:48:00-04:00" pubdate data-updated="true">May 9<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>When moving to a static blog, I chose to go with <a href="http://octopress.org">Octopress</a>.  It is built on top of Jekyll, a Ruby-based static blogging engine.  On top of Jekyll, it adds the HTML templates, CSS, and Javascript to make it look nice.  I had some doubts when I depoyed it last night but that was because the paths were not set up correctly and, I believe, the things that make it look nice were not connected.  I fixed the settings based on Jon Phenow&rsquo;s blog post, <a href="http://jphenow.com/docs/deploying/">Deploying Octopress</a>, based on the section, &ldquo;manually configure deployment.&rdquo; All of a sudden, it looked like a blog.</p>
+
+<p>Next up, migrating the Wordpress posts.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2013/05/08/Blog-movement">Blog Movement</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-08T22:23:00-04:00" pubdate data-updated="true">May 8<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Last week, there was a lot of news about self-hosted Wordpress Blogs being hacked.  Hey, I use a self-hosted Wordpress Blog and I&rsquo;ve posted 26 posts so far.  Sure, no one has read them other than me, but I thought about why I was blogging.  There really were three reasons.</p>
+
+<ul>
+<li>I wanted it to inspire people to learn new things.</li>
+<li>I wanted a record of what I learned.</li>
+<li>I wanted my son to be have a record of what I did.</li>
+</ul>
+
+
+<p>Now, the first reason is nice to have but the last two were key.  The last two also required that I was able to keep my blog content.  I have NO IDEA where my Wordpress blog posts live and in what format.  Thus, having a static blog that is also available locally allows me to retain a copy of the posts for posterity.</p>
+
+<p>I&rsquo;m hoping to migrate my blog to an <a href="http://octopress.org/">Octopress</a> static blogging platform in the next few days.  It may be ugly for longer than that but I&rsquo;ll have more of a hand in manually crafting it.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2013/05/03/A_slice_of_Pi">A Slice of Pi</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-03T00:00:00-04:00" pubdate data-updated="true">May 3<span>rd</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>First off, the Raspberry Pi is cool, really cool. It uses a 5 V micro USB port for power, like the standard for many Android phones. There are two standard USB ports. For video, there is a HDMI port and a composite video out (the yellow of the yellow, red, and white RCA cable). The is a slot for an SD card, which is used as the boot drive. There is a GPIO port for those technically inclined hackers who want to interface with other things.</p>
+
+<p>After a quick Amazon shopping spree, I got:</p>
+
+<ul>
+<li><p><a href="http://www.amazon.com/gp/product/B003VNKNF0/ref=as_li_ss_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B003VNKNF0&amp;linkCode=as2&amp;tag=noqube-20">a Transcend 32 GB Class 10 SDHC Flash Memory Card</a></p></li>
+<li><p><a href="http://www.amazon.com/gp/product/B008TCUXLW/ref=as_li_ss_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B008TCUXLW&amp;linkCode=as2&amp;tag=noqube-20">SB Raspberry Pi Case</a></p></li>
+<li><p><a href="http://www.amazon.com/gp/product/B003MTTJOY/ref=as_li_ss_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B003MTTJOY&amp;linkCode=as2&amp;tag=noqube-20">Edimax EW-7811Un 150 Mbps Wireless 11n Nano Size USB Adapter</a></p></li>
+<li><p><a href="http://www.amazon.com/gp/product/B0090BTY8Y/ref=as_li_ss_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B0090BTY8Y&amp;linkCode=as2&amp;tag=noqube-20">FAVI Entertainment SmartStick Wireless Keyboard with Touchpad Mouse</a></p></li>
+</ul>
+
+
+<p>This is more than you really need but I had ideas of making a Linux server/media center/remote backup solution. Spoiler alert, I didn’t quite get it all working.</p>
+
+<p>The main thing you need is an SD card. I downloaded the <a href="http://www.raspberrypi.org/downloads">Raspian OS</a> and used dd on my Mac (various install methods are listed <a href="http://elinux.org/RPi_Easy_SD_Card_Setup">here</a>). The command looked something like this:</p>
+
+<p><code>sudo dd if=path_of_your_image.img of=/dev/diskn bs=1m</code></p>
+
+<p>I messed this up the first time and wrote it on my first partition instead of the root of the card (e.g. /disk1p1 instead of /disk1 (<strong>warning</strong> your device may be different)). This caused only the red light to come on and nothing else.</p>
+
+<p>After that was fixed, it was more straightforward to get it running. The wireless keyboard was automatically recognized. It uses a USB RF receiver so the Raspberry Pi just sees it as a USB keyboard. Some keys were not recognized correctly, like the | and ~ were mis-mapped. If you like Linux, you know how important these keys are. Playing in the config utility (raspi-config) fixed it (after rebooting). I think it was setting the language to “US UTF-8 UTF-8″ but I did other fiddling so I’m not entirely sure what fixed the problem.</p>
+
+<p>Booting up and logging in, you get the standard command line (aaaah, like being home). Intuitively, I ran startx and it worked. There was an icon on he desktop to configure the wireless adaptor. I scanned for networks, entered the password for our network, and it was connected to the world (like how Skynet got started).</p>
+
+<p>I shutdown and connected the powered USB hub. Then, I moved the keyboard and Ethernet adapters through the hub. Also, since the power plug is a two piece plug and adapter set, I took the power cable out of the power plug and connected into the hub. Starting it up, it all worked!</p>
+
+<p>I spent too much time installing software. After updating apt-get:</p>
+
+<p><code>sudo apt-get update</code></p>
+
+<p>you install by finding software:</p>
+
+<p><code>apt-cache search {blah}</code></p>
+
+<p>and installing it:</p>
+
+<p><code>sudo apt-get install {blah}</code></p>
+
+<p>To get the Raspberry Pi set up as a media center, I wanted to install XBMC. This did not work when I installed from apt-get. I found a nice <a href="http://michael.gorven.za.net/raspberrypi/xbmc">guide</a> which worked. There are alternatives to get XBMC working, like a boot image version, <a href="http://www.raspbmc.com/">Raspbmc</a>, or ways to compile it directly. I went with the path that got running in 10 minutes (didn’t want to compile due to laziness and wanted to retain access to a Linux OS).</p>
+
+<p>The last piece of the puzzle was getting an external HD to work. I have a 1TB USB drive formatted for the Mac which had my DVD archive. Plugging this into the hub did not work. Nothing was recognized and blkid did not show it. Plugging it directly into the Raspberry Pi caused a series of problems with modprobe. I’m not sure if it’s a problem with getting enough power since the drive pulls power through the USB port.</p>
+
+<p>Until I figure it out, I’m glad I have the 32 GB SD card for storage. I can copy media to it as a temporary fix.</p>
+
+<p>Some day, I’d like to get a large drive installed so that I can set up rsyncs scheduled through cron jobs on my other computers for making back ups. Until then, I’d crossing the Raspberry Pi off the list and refocusing back on other projects.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2013/04/30/A_random_walk">A Random Walk</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-30T00:00:00-04:00" pubdate data-updated="true">Apr 30<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>There is a mathematical term, <a href="http://en.wikipedia.org/wiki/Random_walk">Random Walk</a>, that describes a path made by a sequence of random moves. You can be a normal person (non-math geek) and understand the concept of a random walk by its name.</p>
+
+<p>I think there is a fine line between having (or feeling you have) ADHD and being productive. The difference is what you are able to produce while you are taking a “random walk.” Most of the time, I feel like there are too many things I want to learn. I’ll start working on a project, then move to something else before I get anywhere with the first. If you subscribe to Malcolm Gladwell’s premise that it takes 10000 hours to master a skill, I’ve definitely spent over 10000 hours learning but probably have few things I’ve worked on for more than 1% of it. The difference in someone with mastery isn’t necessarily the work they’ve done but that they put the work into a single task.</p>
+
+<p>I’ve been distracted from working on Objective-C recently. I’ve wanted to go back to Rails after watching a great 2 part screencast on Rails on <a href="http://peepcode.com/">Peepcode</a>. I also received my Hexy the Hexapod from <a href="http://arcbotics.com/">Arcbotics</a>. It was an open source robotics project that I supported on Kickstarter. Finally, my boss got into <a href="http://www.raspberrypi.org/0">Raspberry Pi</a> and received an extra unit by accident and gave it to me. It looked like a neat project to try out. It had an advantage over Arduino kits in that it can run a version of Linux with python built in.</p>
+
+<p>All this is to say, I need to refocus after this week and reprioritize projects.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2013/04/24/Getting_on_the_phone">Getting on the Phone</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-24T00:00:00-04:00" pubdate data-updated="true">Apr 24<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>The first chapter of the iOS Programming book talks about opening a developer’s account. $99 later and it’s done.</p>
+
+<p>The first days after that had me worried that I wasted money. But, spending the money made me look around Apple’s developer pages and that’s where I saw the “Hello world” tutorial.</p>
+
+<p>The tutorial took around an hour and I had my first app on my phone! It just a simple app where you type a name on a box, press a button, and it print out, “Hello [name].”</p>
+
+<p>You’d be surprise how inspiring it is to walk through the procedure. I think it removes the fear and uncertainty of writing an app.</p>
+
+<p>This past Saturday, I wanted to write an app that I could use at work for making a calculation. My goal was to write it in a day. The app calculates the amount of solvent to add to a given amount of a compound of given weight to yield the specified concentration. Also, it has a notepad to record the answer so that other calculations can be made. Then, I can use it as reference in the lab.</p>
+
+<p>I started it when my son started his afternoon nap. It took a few minutes to make the layout in interface builder. Using the Assistant, the fields were linked to the code. The coding for the calculation took a while but was straightforward. Then, it took a while figuring out how I messed up linking the fields to the code. After all that was working, I worked on the notepad section. Finally, I made the icon, which ended up tweaking for hours. I had a functioning prototype by dinnertime. I further tweaked it until 12:30 or so but I did complete a functional app and deploy it to the phone in a day!</p>
+
+<p><img src="/images/20130424-194041.jpg" alt="app_image" style="width: 300px; horizontal-align:center;"/></p>
+
+<p>Sure, it’s not pretty, but it’s functional and useful.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2013/04/04/NS_%3D_NextStep">NS = NextStep</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-04T00:00:00-04:00" pubdate data-updated="true">Apr 4<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>In the post, “The first 100 pages,” I said that I hoped to find out what NS meant. Instead of googling it, I wanted to wait and find out, another motivation to finish the book. So that you are not left hanging, NS stands for NextStep.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2013/04/02/Finished%2C_like_getting_off_a_roller_coaster">Finished, Like Getting Off a Roller Coaster</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-02T00:00:00-04:00" pubdate data-updated="true">Apr 2<span>nd</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Chapters 29-37 / 37</p>
+
+<p>All of the programming examples and challenges are done (except the one question regarding NSError for the OSX app). Even reading the forum didn’t help clarify that one.</p>
+
+<p>The chapters which walk through writing the iOS and OSX apps were definitely the climax of the story but the advanced Objective-C and C sections were both really useful. Although a logical organization may have been to put the C sections together, followed by Objective C, then finishing with the two example apps, I felt that this organization made more sense in terms of pacing for the book.</p>
+
+<p>My impressions are that I definitely needed a month (including 2 days off of work) to finish this book. I could easily have taken longer since it felt like all of my free time was taken up making it through the book. The length was perfect. Any longer and I would have given up. I couldn’t imagine it getting any shorter than the 265 pages or so (although maybe without the memory management details?). I don’t feel like I can sit down and write anything useful but I feel like I have a 10000 foot view of what I may expect going forward. If I wait 3 weeks without doing more, I think everything will be gone from my head.</p>
+
+<p>That said, next is the 569 page,<a href="http://www.amazon.com/gp/product/0321821521/ref=as_li_ss_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0321821521&amp;linkCode=as2&amp;tag=noqube-20">iOS Programming: The Big Nerd Ranch Guide</a> by Joe Conway and Aaron Hillegass. I don’t know if it will be a cover-to-cover read. Hopefully, each section will provide tools that can yield small, useful applications. Otherwise, it will be another 4 months of DVR programming to catch up on.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/4/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/2/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>About Me</h1>
+  <p>I loved computers since my parents got an Apple II back in the 70′s. I never pursued a career in computers becoming a scientist instead.  Fun as it is, I struggled to find time to get tech-geeky. Here, I’ll track of my tech dabblings.</p>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2013/11/30/A_Javascript_Mobile_template">A Javascript Mobile Template</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/11/17/Javascript">A Voyage into Javascript</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/10/26/Codeschool_and_Halloween">Codeschool and Halloween</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/10/07/Getting_Started_with_Meteor">Getting Started With Meteor.js</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/09/28/The_beginnings_of_Javascript">The beginnings of Javascript</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+<h2>twitter</h2>
+<a href="https://twitter.com/NotQuiteBeta" class="twitter-follow-button" data-show-count="true" data-lang="en">Follow @NotQuiteBeta</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<div class="tweet" data-twitter-user="NotQuiteBeta">
+</div>
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - NQB -
+  <span class="credit">Powered by the awesome <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

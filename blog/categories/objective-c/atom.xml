@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Objective-C | Not Quite Beta]]></title>
+  <link href="http://notquitebeta.github.io/blog/categories/objective-c/atom.xml" rel="self"/>
+  <link href="http://notquitebeta.github.io/"/>
+  <updated>2014-01-03T19:37:22-05:00</updated>
+  <id>http://notquitebeta.github.io/</id>
+  <author>
+    <name><![CDATA[NQB]]></name>
+    <email><![CDATA[feedback@notquitebeta.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Getting on the phone]]></title>
+    <link href="http://notquitebeta.github.io/2013/04/24/Getting_on_the_phone"/>
+    <updated>2013-04-24T00:00:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/04/24/Getting_on_the_phone</id>
+    <content type="html"><![CDATA[<p>The first chapter of the iOS Programming book talks about opening a developer’s account. $99 later and it’s done.</p>
+
+<p>The first days after that had me worried that I wasted money. But, spending the money made me look around Apple’s developer pages and that’s where I saw the “Hello world” tutorial.</p>
+
+<p>The tutorial took around an hour and I had my first app on my phone! It just a simple app where you type a name on a box, press a button, and it print out, “Hello [name].”</p>
+
+<p>You’d be surprise how inspiring it is to walk through the procedure. I think it removes the fear and uncertainty of writing an app.</p>
+
+<p>This past Saturday, I wanted to write an app that I could use at work for making a calculation. My goal was to write it in a day. The app calculates the amount of solvent to add to a given amount of a compound of given weight to yield the specified concentration. Also, it has a notepad to record the answer so that other calculations can be made. Then, I can use it as reference in the lab.</p>
+
+<p>I started it when my son started his afternoon nap. It took a few minutes to make the layout in interface builder. Using the Assistant, the fields were linked to the code. The coding for the calculation took a while but was straightforward. Then, it took a while figuring out how I messed up linking the fields to the code. After all that was working, I worked on the notepad section. Finally, I made the icon, which ended up tweaking for hours. I had a functioning prototype by dinnertime. I further tweaked it until 12:30 or so but I did complete a functional app and deploy it to the phone in a day!</p>
+
+<p><img src="http://notquitebeta.github.io/images/20130424-194041.jpg" alt="app_image" style="width: 300px; horizontal-align:center;"/></p>
+
+<p>Sure, it’s not pretty, but it’s functional and useful.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[NS = NextStep]]></title>
+    <link href="http://notquitebeta.github.io/2013/04/04/NS_%3D_NextStep"/>
+    <updated>2013-04-04T00:00:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/04/04/NS_=_NextStep</id>
+    <content type="html"><![CDATA[<p>In the post, “The first 100 pages,” I said that I hoped to find out what NS meant. Instead of googling it, I wanted to wait and find out, another motivation to finish the book. So that you are not left hanging, NS stands for NextStep.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Finished, like getting off a roller coaster]]></title>
+    <link href="http://notquitebeta.github.io/2013/04/02/Finished%2C_like_getting_off_a_roller_coaster"/>
+    <updated>2013-04-02T00:00:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/04/02/Finished,_like_getting_off_a_roller_coaster</id>
+    <content type="html"><![CDATA[<p>Chapters 29-37 / 37</p>
+
+<p>All of the programming examples and challenges are done (except the one question regarding NSError for the OSX app). Even reading the forum didn’t help clarify that one.</p>
+
+<p>The chapters which walk through writing the iOS and OSX apps were definitely the climax of the story but the advanced Objective-C and C sections were both really useful. Although a logical organization may have been to put the C sections together, followed by Objective C, then finishing with the two example apps, I felt that this organization made more sense in terms of pacing for the book.</p>
+
+<p>My impressions are that I definitely needed a month (including 2 days off of work) to finish this book. I could easily have taken longer since it felt like all of my free time was taken up making it through the book. The length was perfect. Any longer and I would have given up. I couldn’t imagine it getting any shorter than the 265 pages or so (although maybe without the memory management details?). I don’t feel like I can sit down and write anything useful but I feel like I have a 10000 foot view of what I may expect going forward. If I wait 3 weeks without doing more, I think everything will be gone from my head.</p>
+
+<p>That said, next is the 569 page,<a href="http://www.amazon.com/gp/product/0321821521/ref=as_li_ss_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0321821521&amp;linkCode=as2&amp;tag=noqube-20">iOS Programming: The Big Nerd Ranch Guide</a> by Joe Conway and Aaron Hillegass. I don’t know if it will be a cover-to-cover read. Hopefully, each section will provide tools that can yield small, useful applications. Otherwise, it will be another 4 months of DVR programming to catch up on.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[What was that?!]]></title>
+    <link href="http://notquitebeta.github.io/2013/03/29/What_was_that"/>
+    <updated>2013-03-29T00:00:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/03/29/What_was_that</id>
+    <content type="html"><![CDATA[<p>Chapters 27-28 / 37</p>
+
+<p>Chapter 27 ran through an example of creating an iOS app. Chapter 28 ran through an example of creating a Mac App. I could follow the directions but do I really know what I typed?</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Slow and Steady]]></title>
+    <link href="http://notquitebeta.github.io/2013/03/28/Slow_and_Steady"/>
+    <updated>2013-03-28T00:00:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/03/28/Slow_and_Steady</id>
+    <content type="html"><![CDATA[<p>Chapters 18-26 /37</p>
+
+<p>I feel like a sieve. Going through these chapters have been a slog and I feel like I’ve forgotten most of what I’ve read already. Ironically, the hardest chapter to wrap my head around was called, “Preventing Memory Leaks.”</p>
+
+<p>There was a good chapter called “Writing Files with NSString and NSData.” This is probably because the benefit of the tool is more obvious.</p>
+
+<p>In the end, like any spoken language, it’s easier to understand when someone else is using it than trying to compose your own use of the language. It’s all part of overcoming the learning curve through practice.</p>
+]]></content>
+  </entry>
+  
+</feed>

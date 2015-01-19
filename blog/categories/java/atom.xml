@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Java | Not Quite Beta]]></title>
+  <link href="http://notquitebeta.github.io/blog/categories/java/atom.xml" rel="self"/>
+  <link href="http://notquitebeta.github.io/"/>
+  <updated>2014-01-03T19:37:22-05:00</updated>
+  <id>http://notquitebeta.github.io/</id>
+  <author>
+    <name><![CDATA[NQB]]></name>
+    <email><![CDATA[feedback@notquitebeta.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[10 Years Behind]]></title>
+    <link href="http://notquitebeta.github.io/2013/05/11/10_Years_Behind"/>
+    <updated>2013-05-11T05:36:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/05/11/10_Years_Behind</id>
+    <content type="html"><![CDATA[<p>Today, I had a chance to work with a Java jar file. I needed to run a visualization software as a Java applet. I hadn&rsquo;t realize how easy it was to set up.</p>
+
+<pre><code>&lt;applet
+    width="640" height="480" 
+    code="MoleculeViewerApplet"
+    codebase="."
+    archive="program.jar"&gt;
+    &lt;param name="var1" value="value1"&gt;
+&lt;/applet&gt;
+</code></pre>
+
+<p>It did take a while to figure out that the name and value parameters were passed together to the program. The two variables set actually get sent as <code>var1=value1</code> to the executed applet.</p>
+
+<p>I&rsquo;ve been meaning to get this running for a while now but the software was released in 2003 and the applet HTML tag has already been depreciated in HTML5. Still, it was good to know. You never know when some esoteric bit of knowledge could be used.  Also, if I ever need to set up an applet in a web page, I&rsquo;m off to the races.</p>
+]]></content>
+  </entry>
+  
+</feed>

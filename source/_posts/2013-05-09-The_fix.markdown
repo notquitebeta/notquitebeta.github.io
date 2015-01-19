@@ -1,0 +1,27 @@
+---
+layout: page
+title: The fix
+date: 2013-05-09 20:11
+comments: false
+sharing: true
+footer: true
+categories: Octopress Blogging
+---
+The repeating title/first line problem can now be resolved by substituting the last line of the file. 
+     [[draft]] -> [[body]]
+
+The final template:
+
+    ---
+    layout: page
+    title: [[title]]
+    date: [[date|%Y-%m-%d %H:%M]]
+    comments: false
+    sharing: true
+    footer: true
+    categories:
+    ---
+    [[body]]
+
+Whew. 
+

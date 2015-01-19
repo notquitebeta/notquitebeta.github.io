@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>A Javascript Mobile Template - Not Quite Beta</title>
+  <meta name="author" content="NQB">
+
+  
+  <meta name="description" content="A Javascript Mobile Template Nov 30th, 2013 With some momentum from building something that sort of worked in Meteor and Node, I&rsquo;ve worked on &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://notquitebeta.github.io/2013/11/30/A_Javascript_Mobile_template">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Not Quite Beta" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Merriweather+Sans|PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<script src="//use.edgefonts.net/tangerine;lato:n1,i1,n3,i3,n4,i4,n7,i7,n9,i9:all;cousine:n4,i4,n7,i7:all;lora:n4,i4,n7,i7:all.js"></script>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-41215298-1 ']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Not Quite Beta</a></h1>
+  
+    <h2>9990 hours to mastery</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:notquitebeta.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article role="article">
+  
+  <header>
+    <h1 class="entry-title">A Javascript Mobile Template</h1>
+    <p class="meta">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-30T20:53:00-05:00" pubdate data-updated="true">Nov 30<span>th</span>, 2013</time></p>
+  </header>
+  
+  <p>With some momentum from building something that sort of worked in Meteor and Node, I&rsquo;ve worked on a number of project that also sort of worked.  By sort of, I mean that it has basic functionality but there are small aspects that don&rsquo;t quite work.  For example, I wrote a Meteor.js app last weekend but there are still some peoblems with the publish/subscribe aspects that don&rsquo;t seem to send the correct collections to the client.  When I get that running, I&rsquo;d like to write up a post about it.</p>
+
+<p>Tonight, I wanted to put together a template that would be a starting point for mobile interfaces.  I&rsquo;ve built a framework (although not framework in the programming sense) that should allow someone to easily drop in 4 panels to display.  Navigation is based on tabs at the bottom.</p>
+
+<p><img src="images/20131201_mobile_phone.png" alt="mobile view" /></p>
+
+<p>Viewed from the desktop, all four panels are laid out and the navigation tabs are hidden.</p>
+
+<p><img src="images/20131201_mobile_desktop.png" alt="desktop view" /></p>
+
+<p>In the mobile view, clicking on each tab reviews the panel associated with that tab while hiding the rest.  It also launches some function associated with loading the panel, which can be customized.  For functionality, I used JQuery.  There are cookie functions that are not used.  What needs to be implemented is a Fastclick mechanism (this removes the approvimately <a href="https://developers.google.com/mobile/articles/fast_buttons">300ms delay</a> between pressing a button on a mobile device and running its funciton).  I&rsquo;ve tried to use <a href="http://x1024.github.io/jquery-fastbutton/">JQuery Fastbutton</a> but I don&rsquo;t think it&rsquo;s working (or I need more coffee, not sure).</p>
+
+<p>Overall, this should lower the activation barrier to making an web app by allowing someone to drop in code for each panel.
+Here is the HTML showing the panels and the nav section.  All panels just get plunked between the article tags.</p>
+
+<pre><code>  &lt;header&gt;&lt;h1&gt;Program&lt;/h1&gt;&lt;/header&gt;
+
+  &lt;section id="panels"&gt;
+    &lt;article id="tab1" class="selected"&gt;
+      &lt;header&gt;&lt;h2&gt;Tab1&lt;/h2&gt;&lt;/header&gt;
+    &lt;/article&gt;
+
+    &lt;article id="tab2" class="notSelected hideMobile"&gt;
+      &lt;header&gt;&lt;h2&gt;Tab2&lt;/h2&gt;&lt;/header&gt;
+    &lt;/article&gt;
+
+    &lt;article id="tab3" class="notSelected hideMobile"&gt;
+      &lt;header&gt;&lt;h2&gt;Tab3&lt;/h2&gt;&lt;/header&gt;
+    &lt;/article&gt;
+
+    &lt;article id="tab4" class="notSelected hideMobile"&gt;
+      &lt;header&gt;&lt;h2&gt;Tab4&lt;/h2&gt;&lt;/header&gt;
+    &lt;/article&gt;
+  &lt;/section&gt;
+
+  &lt;nav id="bottomNav"&gt; &lt;!-- hide on desktop --&gt;
+    &lt;ul class="nav"&gt;
+      &lt;li class="navtab selected" data-tab="navtab1"&gt;1&lt;/li&gt;
+      &lt;li class="navtab notSelected" data-tab="navtab2"&gt;2&lt;/li&gt;
+      &lt;li class="navtab notSelected" data-tab="navtab3"&gt;3&lt;/li&gt;
+      &lt;li class="navtab notSelected" data-tab="navtab4"&gt;4&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+</code></pre>
+
+<p>The source is available on <a href="https://github.com/notquitebeta/mobile-4panel">github</a>.</p>
+
+  
+    <footer>
+      <p class="meta">
+        
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-30T20:53:00-05:00" pubdate data-updated="true">Nov 30<span>th</span>, 2013</time>
+        
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/css/'>CSS</a>, <a class='category' href='/blog/categories/jquery/'>JQuery</a>, <a class='category' href='/blog/categories/javascript/'>Javascript</a>, <a class='category' href='/blog/categories/mobile/'>Mobile</a>
+  
+</span>
+
+
+      </p>
+      
+        <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://notquitebeta.github.io/2013/11/30/A_Javascript_Mobile_template" data-via="NotQuiteBeta" data-counturl="http://notquitebeta.github.io/2013/11/30/A_Javascript_Mobile_template" >Tweet</a>
+  
+  
+  
+</div>
+
+      
+    </footer>
+  
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2013/11/30/A_Javascript_Mobile_template">A Javascript Mobile Template</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/11/17/Javascript">A Voyage into Javascript</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/10/26/Codeschool_and_Halloween">Codeschool and Halloween</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/10/07/Getting_Started_with_Meteor">Getting Started With Meteor.js</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/09/28/The_beginnings_of_Javascript">The beginnings of Javascript</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+<h2>twitter</h2>
+<a href="https://twitter.com/NotQuiteBeta" class="twitter-follow-button" data-show-count="true" data-lang="en">Follow @NotQuiteBeta</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<div class="tweet" data-twitter-user="NotQuiteBeta">
+</div>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - NQB -
+  <span class="credit">Powered by the awesome <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

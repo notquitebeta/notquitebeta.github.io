@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Octopress | Not Quite Beta]]></title>
+  <link href="http://notquitebeta.github.io/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://notquitebeta.github.io/"/>
+  <updated>2014-01-03T19:37:22-05:00</updated>
+  <id>http://notquitebeta.github.io/</id>
+  <author>
+    <name><![CDATA[NQB]]></name>
+    <email><![CDATA[feedback@notquitebeta.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[The fix]]></title>
+    <link href="http://notquitebeta.github.io/2013/05/09/The_fix"/>
+    <updated>2013-05-09T20:11:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/05/09/The_fix</id>
+    <content type="html"><![CDATA[<p>The repeating title/first line problem can now be resolved by substituting the last line of the file.</p>
+
+<pre><code> [[draft]] -&gt; [[body]]
+</code></pre>
+
+<p>The final template:</p>
+
+<pre><code>---
+layout: page
+title: [[title]]
+date: [[date|%Y-%m-%d %H:%M]]
+comments: false
+sharing: true
+footer: true
+categories:
+---
+[[body]]
+</code></pre>
+
+<p>Whew.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Using Drafts to Blog]]></title>
+    <link href="http://notquitebeta.github.io/2013/05/09/Using_Drafts_to_Blog"/>
+    <updated>2013-05-09T19:54:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/05/09/Using_Drafts_to_Blog</id>
+    <content type="html"><![CDATA[<p>I think I have it set correctly. The only problem I currently have is that the title is repeated as the first line of the blog.</p>
+
+<p>The draft is types as in markdown format. Then, I have an action called &ldquo;New Blog Post.&rdquo;  It is set up to put the draft into my _Posts directory.</p>
+
+<p>The file name is predefined as
+<code>[[date]]-[[title]]</code>
+with a markdown extension.</p>
+
+<p>The template is:</p>
+
+<pre><code>---
+layout: page
+title: [[title]]
+date: [[date|%Y-%m-%d %H:%M]]
+comments: false
+sharing: true
+footer: true
+categories:
+---
+[[draft]]
+</code></pre>
+
+<p>The first line, the title, is used for the file name and title of the post. The date in the file name just uses the <code>[[date]]</code> tag from Drafts. The date in the header is customized using <a href="http://www.tutorialspoint.com/python/time_strftime.htm">strftime</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Replacing the blogging workflow.]]></title>
+    <link href="http://notquitebeta.github.io/2013/05/09/Replacing_the_blogging_workflow"/>
+    <updated>2013-05-09T19:25:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/05/09/Replacing_the_blogging_workflow</id>
+    <content type="html"><![CDATA[<p>Switching from Wordpress was an easy decision. The question is now how to work blogging into my workflow. Most of my posts have been made using my phone using the Wordpress App. There isn&rsquo;t an Octopress App.</p>
+
+<p>Since my local Octopress install is on Dropbox, I am using the Drafts App to write and I set up an action to put the message in the posts folder in the Octopress install in my Dropbox folder.</p>
+
+<p>If the current action works, I would just need to generate the pages and deploy on the site. While these are currently manual, it could be placed on a schedule.  I don&rsquo;t do this because it&rsquo;s sitting on my laptop which isn&rsquo;t always on. If I put this on an always-on system, I would instead probably use a script that looks for new files in the posts folder and automatically triggers a generate and deploy.</p>
+
+<p>First thing&rsquo;s first, let&rsquo;s see if the Drafts action works.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress]]></title>
+    <link href="http://notquitebeta.github.io/2013/05/09/Octopress"/>
+    <updated>2013-05-09T04:48:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/05/09/Octopress</id>
+    <content type="html"><![CDATA[<p>When moving to a static blog, I chose to go with <a href="http://octopress.org">Octopress</a>.  It is built on top of Jekyll, a Ruby-based static blogging engine.  On top of Jekyll, it adds the HTML templates, CSS, and Javascript to make it look nice.  I had some doubts when I depoyed it last night but that was because the paths were not set up correctly and, I believe, the things that make it look nice were not connected.  I fixed the settings based on Jon Phenow&rsquo;s blog post, <a href="http://jphenow.com/docs/deploying/">Deploying Octopress</a>, based on the section, &ldquo;manually configure deployment.&rdquo; All of a sudden, it looked like a blog.</p>
+
+<p>Next up, migrating the Wordpress posts.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Blog Movement]]></title>
+    <link href="http://notquitebeta.github.io/2013/05/08/Blog-movement"/>
+    <updated>2013-05-08T22:23:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/05/08/Blog-movement</id>
+    <content type="html"><![CDATA[<p>Last week, there was a lot of news about self-hosted Wordpress Blogs being hacked.  Hey, I use a self-hosted Wordpress Blog and I&rsquo;ve posted 26 posts so far.  Sure, no one has read them other than me, but I thought about why I was blogging.  There really were three reasons.</p>
+
+<ul>
+<li>I wanted it to inspire people to learn new things.</li>
+<li>I wanted a record of what I learned.</li>
+<li>I wanted my son to be have a record of what I did.</li>
+</ul>
+
+
+<p>Now, the first reason is nice to have but the last two were key.  The last two also required that I was able to keep my blog content.  I have NO IDEA where my Wordpress blog posts live and in what format.  Thus, having a static blog that is also available locally allows me to retain a copy of the posts for posterity.</p>
+
+<p>I&rsquo;m hoping to migrate my blog to an <a href="http://octopress.org/">Octopress</a> static blogging platform in the next few days.  It may be ugly for longer than that but I&rsquo;ll have more of a hand in manually crafting it.</p>
+]]></content>
+  </entry>
+  
+</feed>

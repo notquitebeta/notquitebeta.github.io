@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Django | Not Quite Beta]]></title>
+  <link href="http://notquitebeta.github.io/blog/categories/django/atom.xml" rel="self"/>
+  <link href="http://notquitebeta.github.io/"/>
+  <updated>2014-01-03T19:37:22-05:00</updated>
+  <id>http://notquitebeta.github.io/</id>
+  <author>
+    <name><![CDATA[NQB]]></name>
+    <email><![CDATA[feedback@notquitebeta.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[The deployment problem, part2]]></title>
+    <link href="http://notquitebeta.github.io/2013/02/04/The_deployment_problem2"/>
+    <updated>2013-02-04T00:00:00-05:00</updated>
+    <id>http://notquitebeta.github.io/2013/02/04/The_deployment_problem2</id>
+    <content type="html"><![CDATA[<p>Throughout this process of learning Rails and thinking about deploying web apps, a constant question has been how to run the web app on a system which is administered by someone else. A large part of my goal for developing web apps has been to use it at work, where I have space on the server but do not have admin privileges. The web pages are on systems likely served by an Apache web server. Since it also serves many other pages and is a production server, I would prefer not to need to edit the servers config file or reboot the server when I change something.</p>
+
+<p>We’ll see how Rails handles this. In worrying about this, I look a quick glance Django. I skimmed the online resource, www.djangobook.com. In the book, Chapter 12 appears to have a workaround that allows Apache to spawn a process for handling a Django web app. The section is titled, “Running Django on a Shared-Hosting Provider with Apache,” which sound like the situation that I will be facing.</p>
+
+<p>One final observation of Rails vs Django (based on the past few hours of skimming) is that Django looks like python. Rails looks like Rails, with some resemblance to Ruby. Being written in Ruby doesn’t mean knowing Ruby helps, like knowing C doesn’t allow someone to understand every program every written in C. I don’t mean to imply any inferiority in the Rails approach. In many ways, this may make it easier to implement because it’s freed of its strong ties to programming in Ruby. These are my first, and admittedly uninformed, initial impressions of Rails and Django.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Shouldn’t it be easier? (Python DB modules)]]></title>
+    <link href="http://notquitebeta.github.io/2013/02/04/Shouldn%E2%80%99t_it_be_easier_Python_DB_modules"/>
+    <updated>2013-02-04T00:00:00-05:00</updated>
+    <id>http://notquitebeta.github.io/2013/02/04/Shouldn’t_it_be_easier_Python_DB_modules</id>
+    <content type="html"><![CDATA[<p> was hoping to put a quick Django web app together tonight (“was”). I just wanted to get a feel for the architecture. Well, the problem was that I foolishly thought I would download and install Database modules for Oracle and MySQL, since those would be the common production databases that I may use at home or at work. What, download, untar, run “python setup.py buildl python setup.py install.” Done, right? Big mistake.</p>
+
+<p>Apparently, the last Oracle release for OsX was version 10g Rel2, which is no longer available for download. A hint here is that other links on this page reference software for Os 10.5 (currently, I’m running 10.8.2). The Oracle module, cx_Oracle, seems to need an Oracle software installation in order to build. Maybe there are library requirements but it seems that it should be independently buildable since you may need to connect to a remote Oracle database.</p>
+
+<p>Ok, maybe I’ll go to MySQL, not ideal but a surrogate for Oracle. Hmmm, apparently not. The hamster wheel of the last 3 hours can be summarized by a stackoverflow post here. The only difference is it seemed to work for the folks posting but I’ve given up.</p>
+
+<p>Shouldn’t it be easier?</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Projects]]></title>
+    <link href="http://notquitebeta.github.io/2013/01/07/Projects"/>
+    <updated>2013-01-07T00:00:00-05:00</updated>
+    <id>http://notquitebeta.github.io/2013/01/07/Projects</id>
+    <content type="html"><![CDATA[<p>You know how it is, there is always a bunch of things you want to learn. This may be better described as a bunch things you wish you knew. You may put it in a list. You may even start it. My favorite part is buying books, because even with Amazon Prime, it takes 2 days to get delivered. That’s about when my attention has moved on to something else. In the end, you look back months or years later and don’t feel like you got anything done. Maybe you don’t feel this way (I hope you don’t), but I usually do. So here is my To Do list (for now).</p>
+
+<p>I’ll describe what I’m planning to work on here and why. This post may be a bit long. I’ll put a table up to track projects on the blog as well. It will live here in the <a href="http://notquitebeta.com/?page_id=26">Projects</a> tab.</p>
+
+<h2>A little background</h2>
+
+<p>A year and a half ago, I started playing around with Ruby. It is Ruby’s philosophy to be fun and it was. It dethroned Perl as my go-to language pretty quickly. This isn’t to say I know what I’m doing, just that I can get some things done with it.</p>
+
+<p>A few months ago, I started playing with Python. This is because Python has been more adopted into the scientific community. I’m not sure why, but it may be because it interacts we with C. One thing I do know is that some folks I like on the Internet like <a href="http://macdrifter.com/">Macdrifter</a>, <a href="http://www.leancrew.com/all-this/">Dr. Drang</a>, and <a href="http://brettterpstra.com/">Brett Terpstra</a> use Python (although Brett is a solid Ruby guy).</p>
+
+<p>Python is supposed to have the advantage that it is easier to read. I think this is generally true compared to Perl. It may be as well versus Ruby but I tend to be poor at commenting my code, so nothing is easy to read. <strong>I’m really working on improving the commenting.</strong> Part of the commenting problem is that I never wrote code expecting others to read it. This isn’t the only reason to comment because I usually can’t figure out my own code. Recently, I worked with coworker on a project and I put effort into commenting. It definitely made a difference for me.</p>
+
+<h2>So what’s the plan?</h2>
+
+<h2>Programming Web Apps</h2>
+
+<ul>
+<li><p>I’d like to learn <strong>Ruby on Rails</strong>. All of my Ruby has been used in command line scripts. Rails would make applications accessible via a web browser, provide a graphical interface, but still allow access to underlying hooks into the system, if necessary (admittedly, I may have a naive understanding of how it works).</p></li>
+<li><p>After getting a basic understanding of Rails, I’d like to try a little Django. Since I’ve been trying Python, if I switch to it from Ruby, it may be easier to use <strong>Django</strong> than Rails in the long run.</p></li>
+</ul>
+
+
+<h2>HTML</h2>
+
+<ul>
+<li><p>Saying <strong>HTML</strong> above is not really right. Yes, HTML is on the list. I’m still using HTML from the 90′s. Is that HTML1? We’re only on 5 now. But I really mean all the other stuff that goes to making a good (good may be too strong a word) website.</p></li>
+<li><p><strong>CSS</strong>: I don’t know what it is but it seems important. No, just kidding. I learned a little about Style Sheets when through the tutorials on Codecademy last spring. At the time, it made sense but without following up with practice, it wasn’t going to stick.</p></li>
+<li><p><strong>Javascript and JQuery</strong>: I don’t know how much I’ll need them but I’m going to put them on the list. Are they even different things? So much to learn, Grasshopper.</p></li>
+<li><p><strong>Responsive Design</strong>: What little I know seems to indicate that this is not mutually exclusive to the previous items. I don’t know if there are different the ways of implementing it, but I’d like the web pages/apps that I put together to be usable on different platforms.</p></li>
+</ul>
+
+
+<h2>Design</h2>
+
+<p>Man, I just don’t get Design. I’ve never paid attention to style, fashion, or trends. If it wasn’t for my wife, I’d still be wearing just black and gray because I couldn’t get anything else match. As I’m getting older, I’m trying not to rush through things as much, to stop and smell the roses a bit.</p>
+
+<p>On the more practical side, I do appreciate the utility of making things easier to understand and use. For example, I’m quite good at writing scripts that take a bunch of arguments to run. Those scripts are only usable while the arguments needed are still in short term memory. Two days later and I have to rewrite the script because I can’t get it to work again (please note the poor commenting mentioned above).</p>
+
+<p>All and all, it’s not about making something that will work. It’s about making something that is useful. Making a helicopter that no one can fly is not more useful than making a can opener that everyone can use.</p>
+
+<h2>In Summary (let’s wrap it up already)</h2>
+
+<p>All together, these all have to goal of allowing me to build tools that can be controlled by a web interface. I see this as being useful for geeking out at work as well as the potential for uses at home (e.g. one of the first projects I’d like to build is a basic Grocery List).</p>
+
+<h2>P.S.</h2>
+
+<p>I’d like to learn <strong>Objective-C</strong>. My goal is not to write the next Angry Birds. My wife will attest to the fact that I’m probably allergic to money. This is also evident from my being in school until my 30′s, making below minimum wage, and following that up with even more training as a Postdoc.</p>
+
+<p>I see learning Objective-C as similar to learning to build web-based applications. It just makes it easier to interact with the underlying code, making it more usable and possibly more portable.</p>
+]]></content>
+  </entry>
+  
+</feed>

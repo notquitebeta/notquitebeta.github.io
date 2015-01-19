@@ -1,0 +1,10 @@
+---
+layout: page
+title: "Sleep"
+date: 2013-03-05 00:00
+comments: false
+sharing: true
+footer: true
+categories: Objective-C
+---
+This is a quick update post. Since my son has started waking up between 2 and 4 a.m. on a regular basis, my regular schedule to work on the computer after he goes to sleep required adjustment. Going to sleep and waking 3 hours later started to impact the rest of the day. To accommodate his schedule, I’ve shifted to going to sleep as early as possible so when he wakes, I would stay up to read. There has been a few good sessions of reading at 3 to 5 in the morning. As a result or the new schedule, I’ve also shifted to a mode that involved more reading instead of working on the computer. Sometimes, you just have to roll with the punches of life.

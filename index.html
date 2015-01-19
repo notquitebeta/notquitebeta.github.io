@@ -1,0 +1,670 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Not Quite Beta</title>
+  <meta name="author" content="NQB">
+
+  
+  <meta name="description" content="With some momentum from building something that sort of worked in Meteor and Node, I&rsquo;ve worked on a number of project that also sort of worked &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://notquitebeta.github.io">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Not Quite Beta" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Merriweather+Sans|PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<script src="//use.edgefonts.net/tangerine;lato:n1,i1,n3,i3,n4,i4,n7,i7,n9,i9:all;cousine:n4,i4,n7,i7:all;lora:n4,i4,n7,i7:all.js"></script>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-41215298-1 ']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Not Quite Beta</a></h1>
+  
+    <h2>9990 hours to mastery</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:notquitebeta.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2013/11/30/A_Javascript_Mobile_template">A Javascript Mobile Template</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-30T20:53:00-05:00" pubdate data-updated="true">Nov 30<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>With some momentum from building something that sort of worked in Meteor and Node, I&rsquo;ve worked on a number of project that also sort of worked.  By sort of, I mean that it has basic functionality but there are small aspects that don&rsquo;t quite work.  For example, I wrote a Meteor.js app last weekend but there are still some peoblems with the publish/subscribe aspects that don&rsquo;t seem to send the correct collections to the client.  When I get that running, I&rsquo;d like to write up a post about it.</p>
+
+<p>Tonight, I wanted to put together a template that would be a starting point for mobile interfaces.  I&rsquo;ve built a framework (although not framework in the programming sense) that should allow someone to easily drop in 4 panels to display.  Navigation is based on tabs at the bottom.</p>
+
+<p><img src="images/20131201_mobile_phone.png" alt="mobile view" /></p>
+
+<p>Viewed from the desktop, all four panels are laid out and the navigation tabs are hidden.</p>
+
+<p><img src="images/20131201_mobile_desktop.png" alt="desktop view" /></p>
+
+<p>In the mobile view, clicking on each tab reviews the panel associated with that tab while hiding the rest.  It also launches some function associated with loading the panel, which can be customized.  For functionality, I used JQuery.  There are cookie functions that are not used.  What needs to be implemented is a Fastclick mechanism (this removes the approvimately <a href="https://developers.google.com/mobile/articles/fast_buttons">300ms delay</a> between pressing a button on a mobile device and running its funciton).  I&rsquo;ve tried to use <a href="http://x1024.github.io/jquery-fastbutton/">JQuery Fastbutton</a> but I don&rsquo;t think it&rsquo;s working (or I need more coffee, not sure).</p>
+
+<p>Overall, this should lower the activation barrier to making an web app by allowing someone to drop in code for each panel.
+Here is the HTML showing the panels and the nav section.  All panels just get plunked between the article tags.</p>
+
+<pre><code>  &lt;header&gt;&lt;h1&gt;Program&lt;/h1&gt;&lt;/header&gt;
+
+  &lt;section id="panels"&gt;
+    &lt;article id="tab1" class="selected"&gt;
+      &lt;header&gt;&lt;h2&gt;Tab1&lt;/h2&gt;&lt;/header&gt;
+    &lt;/article&gt;
+
+    &lt;article id="tab2" class="notSelected hideMobile"&gt;
+      &lt;header&gt;&lt;h2&gt;Tab2&lt;/h2&gt;&lt;/header&gt;
+    &lt;/article&gt;
+
+    &lt;article id="tab3" class="notSelected hideMobile"&gt;
+      &lt;header&gt;&lt;h2&gt;Tab3&lt;/h2&gt;&lt;/header&gt;
+    &lt;/article&gt;
+
+    &lt;article id="tab4" class="notSelected hideMobile"&gt;
+      &lt;header&gt;&lt;h2&gt;Tab4&lt;/h2&gt;&lt;/header&gt;
+    &lt;/article&gt;
+  &lt;/section&gt;
+
+  &lt;nav id="bottomNav"&gt; &lt;!-- hide on desktop --&gt;
+    &lt;ul class="nav"&gt;
+      &lt;li class="navtab selected" data-tab="navtab1"&gt;1&lt;/li&gt;
+      &lt;li class="navtab notSelected" data-tab="navtab2"&gt;2&lt;/li&gt;
+      &lt;li class="navtab notSelected" data-tab="navtab3"&gt;3&lt;/li&gt;
+      &lt;li class="navtab notSelected" data-tab="navtab4"&gt;4&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+</code></pre>
+
+<p>The source is available on <a href="https://github.com/notquitebeta/mobile-4panel">github</a>.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2013/11/17/Javascript">A Voyage Into Javascript</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-17T18:00:00-05:00" pubdate data-updated="true">Nov 17<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I don&rsquo;t mean to sound like an advertisement for Codeschool (I&rsquo;m not affiliated with them), but I took the lesson on Node.js.  It was eyeopening, mostly because it gave me a sense of empowerment.  It used Express for routing, Redis as a database, and Socket to push information.  Basically, this is much of the appear for a packaged system like Meteor.  It also sparked ideas of how to implement tools.  For example, with Node and Express, I can push information from my system to another system&rsquo;s browser through a RESTful interface.  At work (can&rsquo;t display the code), I was able to build an interface for a tool using HTML, CSS, and JQuery (with Ajax calls) to a server running Node and Express, serving the desired information.  This worked pretty well.  Additionally, the front end was made responsive with CSS media queries.</p>
+
+<p>It only took a few days to put this together and a couple more for tweaking it to work correctly.  Overall, it took 3 weeks, although after the first week and a half, my efforts were split with a second project.</p>
+
+<p>The second project was to make a page/Webapp that lets me enter data and save it to a database in a form.  There are three major views, a list view, a reading view, and an editing view.  This was my chance to try Meteor.js.  I was able to put together eveything but it wasn&rsquo;t a pleasant experience (admittedly, it would probably be better if I was used to the parts of Meteor though, particularly Handlebars.js).  I thought there was a lot of unnecessarily duplicated code because Handlebars didn&rsquo;t have loops like other languages. I also don&rsquo;t have the proper subscription/publishing of data set up.</p>
+
+<p>It&rsquo;s been a lot of fun hacking away at it.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2013/10/26/Codeschool_and_Halloween">Codeschool and Halloween</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-10-26T11:43:00-04:00" pubdate data-updated="true">Oct 26<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Codeschool and Halloween</p>
+
+<p>After learning a little javascript, I&rsquo;ve still felt a gap in knowledge with basic web programming (e.g. CSS and HTML).  I signed up with Codeschool. I had tried Codecademy and Peepcode before but neither seem to fit what I was looking for. Peepcode is essentially a collection of video tutorials. It tends to be a bit high level and expects that you know what you are looking to learn. Codecademy contains interactive courses. You read a bit of a lesson and work through exercises. Peepcode tends to be passive. Codecamedy is active but has two gaps for me. 1) some exercises just had you read something and click submit. There was no demonstration of understanding. 2) the lessons, though broken into small chunks, required reading the selection. This may work for some but it&rsquo;s like learning from reading a book, and I find that things don&rsquo;t quite stick for me.</p>
+
+<p>Codeschool is like a merge of the two. Each course consists of a few section. Each section starts with a short video demonstration followed by exercises that are meant to demonstrate some level of understanding. It follows the pattern of first showing you how to do something and then having you repeat something similar on your own. This and having a video (something with sound) tends to engage me better and fit my way of learning.</p>
+
+<p>I had a chance to learn a bit of CSS and JQuery. I&rsquo;m not good at either but I have enough proficiency to use them and understand (somewhat) what I&rsquo;m going. The exposure to the material has been useful and I&rsquo;ve already used a little JQuery on some projects I&rsquo;ve done at work as well as rewriting the Molecular Weight Calculator app (topic of a future post I&rsquo;ll need  to write).</p>
+
+<p>I took two weeks off to work on my son&rsquo;s Halloween costume and am eager to get back to coding.  My next course is on Web Programming for Mobile. What&rsquo;s nice about Codeschool is that it&rsquo;s like a survey course for different web tools. Not a deep dive but easy to understand exposure to many things giving you an ideal of what to explore further.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2013/10/07/Getting_Started_with_Meteor">Getting Started With Meteor.js</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-10-07T06:13:00-04:00" pubdate data-updated="true">Oct 7<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>In this second pass through <a href="http://www.amazon.com/dp/1782160825/?tag=noqube-20">Getting Started with Meteor.js JavaScript Framework, by Isaac Strack</a>, it made a lot more sense.  The first time around, I didn&rsquo;t have enough experience with Javascript.  This made debugging small problems a unbelievably difficult.  This time, finding problems with syntax and misplaced punctuation was a lot easier.  There was one point were I ran into problems and it helped to find someone had completed the project and put it up on Github.  A lot of cutting and pasting eventually solved the problem.</p>
+
+<p>Overall, the book is really good.  The length (about 130 pages) was just right.  Any shorter and I don&rsquo;t believe I would have learned what I wanted to learn.  Any longer and I would have the problem where I forgot the beginning before reaching the end.  It&rsquo;s not meant to make you a Meteor expert in the sense that you understand the underlying theory of fibers and threads, but finishing the book makes you functional to start your own project since you see the whole path ahead.</p>
+
+<p>Some folks are able to just get a project done using Google and Stack Overflow.  I&rsquo;m not one of those people.  I need to have a plan in my head for the whole process or it seems too daunting.  Having completed this book and it&rsquo;s included project, I can see the skeleton of a complete project.  This is likely just a psychological crutch but it helps.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2013/09/28/The_beginnings_of_Javascript">The Beginnings of Javascript</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-28T20:35:00-04:00" pubdate data-updated="true">Sep 28<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>It&rsquo;s taking some balancing to learn a little Javascript, a little node, and a little Meteor.  I finished the book, <a href="http://www.amazon.com/dp/0470647833/?tag=noqube-20">JavaScript 24-Hour Trainer, by Jeremy McPeak</a> a few weeks ago and forgot almost everything.  I had taken notes in the Moleskine that my wife got me for Christmas and loaded it into Evernote.  That was nice to have access to it from everywhere and it was sort of searchable based on whether my writing was legible, but I didn&rsquo;t have it in NVAlt, the one unified place where I put code.  NVAlt is nice because I can access it with Simplenote on my phone and it is quite searchable.  I took a few hours to transcribe notes from Evernote to NVAlt which proved to be a nice refresher.</p>
+
+<p>I also had the opportunity to write my first Node script.  It was just a few lines that requested a list of projects and then looked for entries in each project.  What I liked was that it did this asynchonously (or is it non-blocking? (or the computer was acting fast that day)).  What it does is query for a list of projects, then for each project, it sendsa q request for information, printing the information when it is retreived.  The non-blocking characteristic of Node makes it fast because it doesn&rsquo;t wait for the information to return before sending a request for the next project.  Instead, as soon as a request is sent, it goes ahead and moves to send the next request.  The program takes care of things when the information is returned, whenever it returns.  I think this will have benefits when there becomes many more entries for each project because all the requests are out at once, not waiting to run serially.  It&rsquo;s like when a King sends his four fastest ships out to find someone instead of sending one ship out at a time. (Yes, just like that).</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2013/08/04/The_longest_day">The Longest Day</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-04T15:10:00-04:00" pubdate data-updated="true">Aug 4<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Previously, I had wanted to start learning Meteor.js. I thought it looked like an interesting way to build web apps analogous to Rails, although possibly not as robust because it is not as mature and doesn&rsquo;t have as many Libraries. I went through some tutorials and the book, <a href="http://www.amazon.com/dp/1782160825/?tag=noqube-20">Getting Started with Meteor.js JavaScript Framework, by Isaac Strack</a>.</p>
+
+<p>I follow <a href="http://www.twitter.com/meteorjs">meteorjs</a> on Twitter, and they often post links to tutorials. I like the tutorials because I could finish one in a night but I felt like I wasn&rsquo;t getting enough of the big picture.   I frequently hear people who learn a computer language by starting with a problem or project they want to solve. For some reason, I never seem to have think of a problem to solve. I usually like to learn as much as I can and then trying to see how I can reimplement a current workflow (reinvent the wheel). I always used to think that I was creative because I could do things others didn&rsquo;t think to do. More and more though, I don&rsquo;t think I have the same creativity that allows people to come up with ideas and then solve them. I think I&rsquo;ve always been an incremental thinker; someone who takes a solution and tries to apply it to a slightly different problem. This is why I seem to like going to books more, because I get a whole perspective on the topic. Also, I hope to have a spark of inspiration while reading that says, &ldquo;maybe this would also work for &hellip;&rdquo; Most of the time, this doesn&rsquo;t happen.</p>
+
+<p>While I&rsquo;m somewhat familiar with HTML and less so with CSS, my Javascript knowledge is non-existent.  I just don&rsquo;t know the syntax. So when something didn&rsquo;t work while following the book or a Meteor tutorial, I was stuck. Short of finding a typo, I wouldn&rsquo;t know how to debug the problem. This is what made me rethink my learning strategy.  I needed to start with a basic familiarity with Javascript. For this, I got the book, <a href="http://www.amazon.com/dp/0470647833/?tag=noqube-20">JavaScript 24-Hour Trainer, by Jeremy McPeak</a>.</p>
+
+<p>Now by the title, you would think this could be completed in a single, sleep-deprived day. It actually took 3.5 weeks. By the time I finished the book, I didn&rsquo;t remember the beginning anymore. Luckily, I took notes and even used the photo feature of Evernote to record them for reference. But the important thing is that I have a sense of the syntax now. The other thing I learned was that I don&rsquo;t like how it seems a developer spent unreasonable effort to support IE 8 and below (which is
+probably standard in many corporate settings), especially when IE 10 is available.</p>
+
+<p>Now that I&rsquo;ve learned some Javascript, the next steps can be:</p>
+
+<ul>
+<li>more Javascript (which is probably a good idea).</li>
+<li>Back to Meteor</li>
+<li>maybe some Node.js, which is the server side javascript framework on which Meteor is built. Node has some potential application in that it could be used from the command line in the absence of any web interface.</li>
+</ul>
+
+
+<p>Finally, the other interesting stumbling-upon-thingy (there should be a word for this) is <a href="http://phonegap.com/">Phonegap</a>, a tool that allows someone to write an app in HTML, CSS, and Javascript and translate it to a mobile platform.</p>
+
+<p>I&rsquo;m glad I learned Javascript. I just need to start using it to get it into my head.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2013/07/08/Refocusing">Refocusing</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-08T19:06:00-04:00" pubdate data-updated="true">Jul 8<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>The last two weeks have been spent on trying to learn R, a statistical programming language, Meteor, a javascript-based reactive web app programming language, building the FAQ pages, and a little further exploration of Git.</p>
+
+<p>Learning Meteor was interesting but I found that I didn&rsquo;t know enough javascript to know where javascript ended and Meteor began. I got the book, Learning Meteor, but found that when thing didn&rsquo;t work, I didn&rsquo;t know enough to troubleshoot it.</p>
+
+<p>I think I&rsquo;m at a good stopping point for R, the FAQ, and Git. Meteor really requires further knowledge if Javascript so I think that is what will be where I focus the next few weeks.</p>
+
+<p>If I can get rolling on Rails again, I may be able to do it in parallel with Javascript. It seems like javascript is a fundamental language I need learn with CSS. Then, whether l go with Rails, Meteor, or an iPhone objective-c web app, I have a more solid foundation.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2013/07/07/A_different_way_of_thinking_about_power">A Different Way of Thinking About Power.</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-07T11:36:00-04:00" pubdate data-updated="true">Jul 7<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&rsquo;ve had the new Macbook Air (2013) with the Haswell CPU for a little over a week now.  My last Macbook Air had a battery that was supposed to last 4.5 hours but practically lasted about 3 hours. Part of that could have been because I was always hitting the limit of the RAM and pages were being cached to disk.  Running the same constellation of apps, I can see that I&rsquo;m usually using more than the 2GB of built in memory I had.  At times, I&rsquo;ve spiked to 4 GB now.</p>
+
+<p>With the new latop, I usually will get over 10 hours of battery life, I think.  It&rsquo;s hard to say because the calculation varies quite a bit.  The battery icon in the menu bar is no longer meaningful becuase it may look like there is 30% left but still have over 4 hours remaining.  Here is a view of the battery status.</p>
+
+<p><img src="images/2013-07-07-battery.png" alt="battery" /></p>
+
+<p>For those that may be wondering, this is an <a href="http://www.alfredapp.com">Alfred2</a> workflow using a <a href="http://www.alfredforum.com/topic/1211-battery-view-summary-stats-about-your-laptop-battery/">battery workflow</a> which can be obtained from <a href="https://dl.dropbox.com/u/2377432/alfredv2/battery/Battery.alfredworkflow">here</a> (Thanks Benzi!).</p>
+
+<p>The change this brought on is that I&rsquo;m not always hovering close to my power sourse.  Usually, when I&rsquo;m working on the couch at night, I am checking my battery status and will have to stop when I get down to less than 10% and I start planning accordingly when I get down to 30%.  Now, the laptop is like an iPad or iPhone where I charge it and just carry it around.  I&rsquo;ll leave it on the dinner table all day while at work without worrying that the battery will be drained when I get home.  I&rsquo;ve had it unplugged for days during the work week without a problem, plugging it in when there was still 40% power remaining.  The amazing part is that I can recharge (not fully) in an hour and be good for another day.</p>
+
+<p>It&rsquo;s simply a different way to think about a laptop.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2013/06/29/Setting_up_a_new_machine">Setting Up a New Machine</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-29T19:06:00-04:00" pubdate data-updated="true">Jun 29<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>With the announcement of the new MacBook Airs at the WWDC (2013) with 12 hour batter life (13&#8221; model), I was ready for an upgrade.  My old, beloved laptop was a 2009 MacBook Air.  It&rsquo;s a great system but with 2 GB memory and 128GB storage, it was always near full and swapping memory.</p>
+
+<p>With the new laptop, I went with Migration Assistant to move the old system over.  I&rsquo;ve never used it before so I was curious to see how it worked.  When it started, it said it would take ~6 hours to finish, so I left it overnight.  When I checked it in the morning, it said it still has 2 hours 56 minutes left.  After a while, the time didn&rsquo;t move.  So after stopping it and reinstalling OS 10.8, I went with installing from scratch.  That looked ok and App store installs went well.  Then the software that wasn&rsquo;t from the App Store went a little slower.  I had to find all the links to the software, especially ones purchased from bundled which had specific download links. Thanks to <a href="https://agilebits.com/onepassword">1Password</a>, I was able to get everything (I think) registered.</p>
+
+<p>Then came the Ruby&rsquo;s.  It&rsquo;s been a number of years since I installed and upgraded Ruby.  Since then, I&rsquo;ve done things that required installing different gems (e.g. Octopress, Jekyll, and Rails).  Octopress was relatively easy to get set up since it had a Gemfile and required a <code>bundle install</code>.  I was able to deploy the blog.  Then I went to a Jekyll directory (the FAQs mentioned previously).  The gems installed ok.  Then I went back to the Octopress blog and it failed to deploy.  Hmmm.</p>
+
+<p>After hours of troubleshooting, I don&rsquo;t know if I fixed the problem.  I&rsquo;m hoping to use <code>rvm</code> in the hopes of fixing the problem, although I&rsquo;m not sure what the problem really was.  If this post gets loaded, it means I can currently deploy.  If this is the most recent post, it means I&rsquo;ve messed something up.</p>
+
+<p>It&rsquo;s a little frustrating that gems don&rsquo;t appear to be backwards compatible.  Upgrading a gem seems to mess things up.  The second frustration comes from the fact that much of Ruby/rvm appears to be tcsh-unfriendly.  Since the software I use for work is based on Fortran cose and programmers from the 70&rsquo;s, it is largely tcsh-based.  As such, I usually switch to tcsh on my machines.  With more use of Ruby and rvm, I&rsquo;m taking the plunge and moving to bash.  It may take a bit getting used to but it&rsquo;s probably good to join the 21st century.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2013/06/26/A_Jekyll_Manual2">Jekyll FAQs Pt 2</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-26T21:34:00-04:00" pubdate data-updated="true">Jun 26<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&rsquo;ve spent the last week or so filling out the contents of the FAQs.  It&rsquo;s taken most of my free time but I&rsquo;m almost done.  For formatting, I&rsquo;ve used Twitter Bootstrap extensively.  Its really nice.</p>
+
+<p>For the questions and answers, I tried to use collapsing panels so that someone can quickly scan questions because the answers can get so long that no one would make it past the third question.</p>
+
+<p>The original solution was to use HTML5&rsquo;s summary tag:</p>
+
+<pre><code>&lt;details class="q-and-a"&gt;
+  &lt;summary class="question"&gt;
+    &lt;strong&gt;
+    question1
+    &lt;/strong&gt;
+  &lt;/summary&gt;
+  &lt;p class="answer"&gt;answer&lt;/p&gt;
+&lt;/details&gt;
+&lt;p&gt;
+</code></pre>
+
+<p>The problem is that this works on Chrome and Safari but NOT on Firefox and IE.  While I would be fine with this in the regular world, at work, almost everyone uses IE.</p>
+
+<p>The solution was to further use Twitter Bootstrap&rsquo;s collapse class.
+The above code is now fixed like this:</p>
+
+<pre><code>&lt;div class="q-and-a"&gt;
+  &lt;div class="question" data-toggle="collapse" data-target="#demo"&gt;
+    &lt;strong&gt;
+    question2
+    &lt;/strong&gt;
+  &lt;/div&gt;
+  &lt;div id="demo" class="collapse"&gt;
+  &lt;p class="answer"&gt;answer&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>The new page (compared to the unformatted image from the last post) is shown below.  Question 1 uses the summary tag, question 2 uses Bootstrap solution, question 3 is the expanded view of the Bootstrap solution.</p>
+
+<p><img src="images/2013-06-26_FAQs2.png" alt="page image" /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/2/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>About Me</h1>
+  <p>I loved computers since my parents got an Apple II back in the 70′s. I never pursued a career in computers becoming a scientist instead.  Fun as it is, I struggled to find time to get tech-geeky. Here, I’ll track of my tech dabblings.</p>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2013/11/30/A_Javascript_Mobile_template">A Javascript Mobile Template</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/11/17/Javascript">A Voyage into Javascript</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/10/26/Codeschool_and_Halloween">Codeschool and Halloween</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/10/07/Getting_Started_with_Meteor">Getting Started With Meteor.js</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/09/28/The_beginnings_of_Javascript">The beginnings of Javascript</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+<h2>twitter</h2>
+<a href="https://twitter.com/NotQuiteBeta" class="twitter-follow-button" data-show-count="true" data-lang="en">Follow @NotQuiteBeta</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<div class="tweet" data-twitter-user="NotQuiteBeta">
+</div>
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - NQB -
+  <span class="credit">Powered by the awesome <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

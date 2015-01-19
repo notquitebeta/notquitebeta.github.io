@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Bootstrap | Not Quite Beta]]></title>
+  <link href="http://notquitebeta.github.io/blog/categories/bootstrap/atom.xml" rel="self"/>
+  <link href="http://notquitebeta.github.io/"/>
+  <updated>2014-01-03T19:37:22-05:00</updated>
+  <id>http://notquitebeta.github.io/</id>
+  <author>
+    <name><![CDATA[NQB]]></name>
+    <email><![CDATA[feedback@notquitebeta.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Jekyll FAQs pt 2]]></title>
+    <link href="http://notquitebeta.github.io/2013/06/26/A_Jekyll_Manual2"/>
+    <updated>2013-06-26T21:34:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/06/26/A_Jekyll_Manual2</id>
+    <content type="html"><![CDATA[<p>I&rsquo;ve spent the last week or so filling out the contents of the FAQs.  It&rsquo;s taken most of my free time but I&rsquo;m almost done.  For formatting, I&rsquo;ve used Twitter Bootstrap extensively.  Its really nice.</p>
+
+<p>For the questions and answers, I tried to use collapsing panels so that someone can quickly scan questions because the answers can get so long that no one would make it past the third question.</p>
+
+<p>The original solution was to use HTML5&rsquo;s summary tag:</p>
+
+<pre><code>&lt;details class="q-and-a"&gt;
+  &lt;summary class="question"&gt;
+    &lt;strong&gt;
+    question1
+    &lt;/strong&gt;
+  &lt;/summary&gt;
+  &lt;p class="answer"&gt;answer&lt;/p&gt;
+&lt;/details&gt;
+&lt;p&gt;
+</code></pre>
+
+<p>The problem is that this works on Chrome and Safari but NOT on Firefox and IE.  While I would be fine with this in the regular world, at work, almost everyone uses IE.</p>
+
+<p>The solution was to further use Twitter Bootstrap&rsquo;s collapse class.
+The above code is now fixed like this:</p>
+
+<pre><code>&lt;div class="q-and-a"&gt;
+  &lt;div class="question" data-toggle="collapse" data-target="#demo"&gt;
+    &lt;strong&gt;
+    question2
+    &lt;/strong&gt;
+  &lt;/div&gt;
+  &lt;div id="demo" class="collapse"&gt;
+  &lt;p class="answer"&gt;answer&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>The new page (compared to the unformatted image from the last post) is shown below.  Question 1 uses the summary tag, question 2 uses Bootstrap solution, question 3 is the expanded view of the Bootstrap solution.</p>
+
+<p><img src="images/2013-06-26_FAQs2.png" alt="page image" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Bootstrap]]></title>
+    <link href="http://notquitebeta.github.io/2013/05/11/Bootstrap"/>
+    <updated>2013-05-11T18:05:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/05/11/Bootstrap</id>
+    <content type="html"><![CDATA[<p>One of my goals that I had the last few months was to use Twitter Bootstrap. Written by two folks at Twitter Mark Otto(@mdo) and Jacob Thornton (@fat).</p>
+
+<p>Bootstrap does many, many thing. One thing that stood out was the it makes organizing a webpage easier by breaking the page into 12 columns. Then, you can use the span classes to tell it how many columns to use (out of 12 for the full width). But,the reason I wanted to learn it was to be able to make pages that are &ldquo;responsive,&rdquo; which to me means it can display properly on mobile browsers. I&rsquo;m sure these features are just the tip of the iceberg.</p>
+]]></content>
+  </entry>
+  
+</feed>

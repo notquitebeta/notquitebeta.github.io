@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: CSS | Not Quite Beta]]></title>
+  <link href="http://notquitebeta.github.io/blog/categories/css/atom.xml" rel="self"/>
+  <link href="http://notquitebeta.github.io/"/>
+  <updated>2014-01-03T19:37:22-05:00</updated>
+  <id>http://notquitebeta.github.io/</id>
+  <author>
+    <name><![CDATA[NQB]]></name>
+    <email><![CDATA[feedback@notquitebeta.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[A Javascript Mobile Template]]></title>
+    <link href="http://notquitebeta.github.io/2013/11/30/A_Javascript_Mobile_template"/>
+    <updated>2013-11-30T20:53:00-05:00</updated>
+    <id>http://notquitebeta.github.io/2013/11/30/A_Javascript_Mobile_template</id>
+    <content type="html"><![CDATA[<p>With some momentum from building something that sort of worked in Meteor and Node, I&rsquo;ve worked on a number of project that also sort of worked.  By sort of, I mean that it has basic functionality but there are small aspects that don&rsquo;t quite work.  For example, I wrote a Meteor.js app last weekend but there are still some peoblems with the publish/subscribe aspects that don&rsquo;t seem to send the correct collections to the client.  When I get that running, I&rsquo;d like to write up a post about it.</p>
+
+<p>Tonight, I wanted to put together a template that would be a starting point for mobile interfaces.  I&rsquo;ve built a framework (although not framework in the programming sense) that should allow someone to easily drop in 4 panels to display.  Navigation is based on tabs at the bottom.</p>
+
+<p><img src="images/20131201_mobile_phone.png" alt="mobile view" /></p>
+
+<p>Viewed from the desktop, all four panels are laid out and the navigation tabs are hidden.</p>
+
+<p><img src="images/20131201_mobile_desktop.png" alt="desktop view" /></p>
+
+<p>In the mobile view, clicking on each tab reviews the panel associated with that tab while hiding the rest.  It also launches some function associated with loading the panel, which can be customized.  For functionality, I used JQuery.  There are cookie functions that are not used.  What needs to be implemented is a Fastclick mechanism (this removes the approvimately <a href="https://developers.google.com/mobile/articles/fast_buttons">300ms delay</a> between pressing a button on a mobile device and running its funciton).  I&rsquo;ve tried to use <a href="http://x1024.github.io/jquery-fastbutton/">JQuery Fastbutton</a> but I don&rsquo;t think it&rsquo;s working (or I need more coffee, not sure).</p>
+
+<p>Overall, this should lower the activation barrier to making an web app by allowing someone to drop in code for each panel.
+Here is the HTML showing the panels and the nav section.  All panels just get plunked between the article tags.</p>
+
+<pre><code>  &lt;header&gt;&lt;h1&gt;Program&lt;/h1&gt;&lt;/header&gt;
+
+  &lt;section id="panels"&gt;
+    &lt;article id="tab1" class="selected"&gt;
+      &lt;header&gt;&lt;h2&gt;Tab1&lt;/h2&gt;&lt;/header&gt;
+    &lt;/article&gt;
+
+    &lt;article id="tab2" class="notSelected hideMobile"&gt;
+      &lt;header&gt;&lt;h2&gt;Tab2&lt;/h2&gt;&lt;/header&gt;
+    &lt;/article&gt;
+
+    &lt;article id="tab3" class="notSelected hideMobile"&gt;
+      &lt;header&gt;&lt;h2&gt;Tab3&lt;/h2&gt;&lt;/header&gt;
+    &lt;/article&gt;
+
+    &lt;article id="tab4" class="notSelected hideMobile"&gt;
+      &lt;header&gt;&lt;h2&gt;Tab4&lt;/h2&gt;&lt;/header&gt;
+    &lt;/article&gt;
+  &lt;/section&gt;
+
+  &lt;nav id="bottomNav"&gt; &lt;!-- hide on desktop --&gt;
+    &lt;ul class="nav"&gt;
+      &lt;li class="navtab selected" data-tab="navtab1"&gt;1&lt;/li&gt;
+      &lt;li class="navtab notSelected" data-tab="navtab2"&gt;2&lt;/li&gt;
+      &lt;li class="navtab notSelected" data-tab="navtab3"&gt;3&lt;/li&gt;
+      &lt;li class="navtab notSelected" data-tab="navtab4"&gt;4&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+</code></pre>
+
+<p>The source is available on <a href="https://github.com/notquitebeta/mobile-4panel">github</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Projects]]></title>
+    <link href="http://notquitebeta.github.io/2013/01/07/Projects"/>
+    <updated>2013-01-07T00:00:00-05:00</updated>
+    <id>http://notquitebeta.github.io/2013/01/07/Projects</id>
+    <content type="html"><![CDATA[<p>You know how it is, there is always a bunch of things you want to learn. This may be better described as a bunch things you wish you knew. You may put it in a list. You may even start it. My favorite part is buying books, because even with Amazon Prime, it takes 2 days to get delivered. That’s about when my attention has moved on to something else. In the end, you look back months or years later and don’t feel like you got anything done. Maybe you don’t feel this way (I hope you don’t), but I usually do. So here is my To Do list (for now).</p>
+
+<p>I’ll describe what I’m planning to work on here and why. This post may be a bit long. I’ll put a table up to track projects on the blog as well. It will live here in the <a href="http://notquitebeta.com/?page_id=26">Projects</a> tab.</p>
+
+<h2>A little background</h2>
+
+<p>A year and a half ago, I started playing around with Ruby. It is Ruby’s philosophy to be fun and it was. It dethroned Perl as my go-to language pretty quickly. This isn’t to say I know what I’m doing, just that I can get some things done with it.</p>
+
+<p>A few months ago, I started playing with Python. This is because Python has been more adopted into the scientific community. I’m not sure why, but it may be because it interacts we with C. One thing I do know is that some folks I like on the Internet like <a href="http://macdrifter.com/">Macdrifter</a>, <a href="http://www.leancrew.com/all-this/">Dr. Drang</a>, and <a href="http://brettterpstra.com/">Brett Terpstra</a> use Python (although Brett is a solid Ruby guy).</p>
+
+<p>Python is supposed to have the advantage that it is easier to read. I think this is generally true compared to Perl. It may be as well versus Ruby but I tend to be poor at commenting my code, so nothing is easy to read. <strong>I’m really working on improving the commenting.</strong> Part of the commenting problem is that I never wrote code expecting others to read it. This isn’t the only reason to comment because I usually can’t figure out my own code. Recently, I worked with coworker on a project and I put effort into commenting. It definitely made a difference for me.</p>
+
+<h2>So what’s the plan?</h2>
+
+<h2>Programming Web Apps</h2>
+
+<ul>
+<li><p>I’d like to learn <strong>Ruby on Rails</strong>. All of my Ruby has been used in command line scripts. Rails would make applications accessible via a web browser, provide a graphical interface, but still allow access to underlying hooks into the system, if necessary (admittedly, I may have a naive understanding of how it works).</p></li>
+<li><p>After getting a basic understanding of Rails, I’d like to try a little Django. Since I’ve been trying Python, if I switch to it from Ruby, it may be easier to use <strong>Django</strong> than Rails in the long run.</p></li>
+</ul>
+
+
+<h2>HTML</h2>
+
+<ul>
+<li><p>Saying <strong>HTML</strong> above is not really right. Yes, HTML is on the list. I’m still using HTML from the 90′s. Is that HTML1? We’re only on 5 now. But I really mean all the other stuff that goes to making a good (good may be too strong a word) website.</p></li>
+<li><p><strong>CSS</strong>: I don’t know what it is but it seems important. No, just kidding. I learned a little about Style Sheets when through the tutorials on Codecademy last spring. At the time, it made sense but without following up with practice, it wasn’t going to stick.</p></li>
+<li><p><strong>Javascript and JQuery</strong>: I don’t know how much I’ll need them but I’m going to put them on the list. Are they even different things? So much to learn, Grasshopper.</p></li>
+<li><p><strong>Responsive Design</strong>: What little I know seems to indicate that this is not mutually exclusive to the previous items. I don’t know if there are different the ways of implementing it, but I’d like the web pages/apps that I put together to be usable on different platforms.</p></li>
+</ul>
+
+
+<h2>Design</h2>
+
+<p>Man, I just don’t get Design. I’ve never paid attention to style, fashion, or trends. If it wasn’t for my wife, I’d still be wearing just black and gray because I couldn’t get anything else match. As I’m getting older, I’m trying not to rush through things as much, to stop and smell the roses a bit.</p>
+
+<p>On the more practical side, I do appreciate the utility of making things easier to understand and use. For example, I’m quite good at writing scripts that take a bunch of arguments to run. Those scripts are only usable while the arguments needed are still in short term memory. Two days later and I have to rewrite the script because I can’t get it to work again (please note the poor commenting mentioned above).</p>
+
+<p>All and all, it’s not about making something that will work. It’s about making something that is useful. Making a helicopter that no one can fly is not more useful than making a can opener that everyone can use.</p>
+
+<h2>In Summary (let’s wrap it up already)</h2>
+
+<p>All together, these all have to goal of allowing me to build tools that can be controlled by a web interface. I see this as being useful for geeking out at work as well as the potential for uses at home (e.g. one of the first projects I’d like to build is a basic Grocery List).</p>
+
+<h2>P.S.</h2>
+
+<p>I’d like to learn <strong>Objective-C</strong>. My goal is not to write the next Angry Birds. My wife will attest to the fact that I’m probably allergic to money. This is also evident from my being in school until my 30′s, making below minimum wage, and following that up with even more training as a Postdoc.</p>
+
+<p>I see learning Objective-C as similar to learning to build web-based applications. It just makes it easier to interact with the underlying code, making it more usable and possibly more portable.</p>
+]]></content>
+  </entry>
+  
+</feed>

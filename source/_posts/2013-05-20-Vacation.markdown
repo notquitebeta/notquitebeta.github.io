@@ -1,0 +1,24 @@
+---
+layout: page
+title: Vacation
+date: 2013-05-20 17:43
+comments: false
+sharing: true
+footer: true
+categories:
+---
+The family is on vacation this week. Tech gear (and chargers) packed:
+
+- iPhone 
+- iPad 
+- AppleTV
+- Airport Express
+- Laptop 
+
+We knew the house we rented had wifi but did not know about what inputs were available on the TV (yeah, we're addicted).  
+
+I hadn't realized that wifi was open to the public but had a web-based login. This is one where you can connect to the network but, when you open a page on the browser, you are prompted for a username/password (there must be a name for this type of network). The only problem with this type of setup is that you can't authenticate on devices that do not have browsers. So both the AppleTV and Airport Express were not able to connect. 
+
+Luckily, I had a RCA-to-dock cable on my trusty 1st gen iPad. Using this, we were able to connect to Netflix, etc. 
+
+I'm not sure if it's the iPad, cable, or TV, but we couldn't get music to stream through the TV (no sound system with connections). The solution was to start the music app and then start the Netflix app. Without choosing something to watch, it displays the Netflix logo on the screen. By pushing video, the music playing in the background of the iPad was sent through the speakers!

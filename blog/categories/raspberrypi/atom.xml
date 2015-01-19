@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: RaspberryPi | Not Quite Beta]]></title>
+  <link href="http://notquitebeta.github.io/blog/categories/raspberrypi/atom.xml" rel="self"/>
+  <link href="http://notquitebeta.github.io/"/>
+  <updated>2014-01-03T19:37:22-05:00</updated>
+  <id>http://notquitebeta.github.io/</id>
+  <author>
+    <name><![CDATA[NQB]]></name>
+    <email><![CDATA[feedback@notquitebeta.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[A slice of Pi]]></title>
+    <link href="http://notquitebeta.github.io/2013/05/03/A_slice_of_Pi"/>
+    <updated>2013-05-03T00:00:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/05/03/A_slice_of_Pi</id>
+    <content type="html"><![CDATA[<p>First off, the Raspberry Pi is cool, really cool. It uses a 5 V micro USB port for power, like the standard for many Android phones. There are two standard USB ports. For video, there is a HDMI port and a composite video out (the yellow of the yellow, red, and white RCA cable). The is a slot for an SD card, which is used as the boot drive. There is a GPIO port for those technically inclined hackers who want to interface with other things.</p>
+
+<p>After a quick Amazon shopping spree, I got:</p>
+
+<ul>
+<li><p><a href="http://www.amazon.com/gp/product/B003VNKNF0/ref=as_li_ss_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B003VNKNF0&amp;linkCode=as2&amp;tag=noqube-20">a Transcend 32 GB Class 10 SDHC Flash Memory Card</a></p></li>
+<li><p><a href="http://www.amazon.com/gp/product/B008TCUXLW/ref=as_li_ss_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B008TCUXLW&amp;linkCode=as2&amp;tag=noqube-20">SB Raspberry Pi Case</a></p></li>
+<li><p><a href="http://www.amazon.com/gp/product/B003MTTJOY/ref=as_li_ss_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B003MTTJOY&amp;linkCode=as2&amp;tag=noqube-20">Edimax EW-7811Un 150 Mbps Wireless 11n Nano Size USB Adapter</a></p></li>
+<li><p><a href="http://www.amazon.com/gp/product/B0090BTY8Y/ref=as_li_ss_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B0090BTY8Y&amp;linkCode=as2&amp;tag=noqube-20">FAVI Entertainment SmartStick Wireless Keyboard with Touchpad Mouse</a></p></li>
+</ul>
+
+
+<p>This is more than you really need but I had ideas of making a Linux server/media center/remote backup solution. Spoiler alert, I didn’t quite get it all working.</p>
+
+<p>The main thing you need is an SD card. I downloaded the <a href="http://www.raspberrypi.org/downloads">Raspian OS</a> and used dd on my Mac (various install methods are listed <a href="http://elinux.org/RPi_Easy_SD_Card_Setup">here</a>). The command looked something like this:</p>
+
+<p><code>sudo dd if=path_of_your_image.img of=/dev/diskn bs=1m</code></p>
+
+<p>I messed this up the first time and wrote it on my first partition instead of the root of the card (e.g. /disk1p1 instead of /disk1 (<strong>warning</strong> your device may be different)). This caused only the red light to come on and nothing else.</p>
+
+<p>After that was fixed, it was more straightforward to get it running. The wireless keyboard was automatically recognized. It uses a USB RF receiver so the Raspberry Pi just sees it as a USB keyboard. Some keys were not recognized correctly, like the | and ~ were mis-mapped. If you like Linux, you know how important these keys are. Playing in the config utility (raspi-config) fixed it (after rebooting). I think it was setting the language to “US UTF-8 UTF-8″ but I did other fiddling so I’m not entirely sure what fixed the problem.</p>
+
+<p>Booting up and logging in, you get the standard command line (aaaah, like being home). Intuitively, I ran startx and it worked. There was an icon on he desktop to configure the wireless adaptor. I scanned for networks, entered the password for our network, and it was connected to the world (like how Skynet got started).</p>
+
+<p>I shutdown and connected the powered USB hub. Then, I moved the keyboard and Ethernet adapters through the hub. Also, since the power plug is a two piece plug and adapter set, I took the power cable out of the power plug and connected into the hub. Starting it up, it all worked!</p>
+
+<p>I spent too much time installing software. After updating apt-get:</p>
+
+<p><code>sudo apt-get update</code></p>
+
+<p>you install by finding software:</p>
+
+<p><code>apt-cache search {blah}</code></p>
+
+<p>and installing it:</p>
+
+<p><code>sudo apt-get install {blah}</code></p>
+
+<p>To get the Raspberry Pi set up as a media center, I wanted to install XBMC. This did not work when I installed from apt-get. I found a nice <a href="http://michael.gorven.za.net/raspberrypi/xbmc">guide</a> which worked. There are alternatives to get XBMC working, like a boot image version, <a href="http://www.raspbmc.com/">Raspbmc</a>, or ways to compile it directly. I went with the path that got running in 10 minutes (didn’t want to compile due to laziness and wanted to retain access to a Linux OS).</p>
+
+<p>The last piece of the puzzle was getting an external HD to work. I have a 1TB USB drive formatted for the Mac which had my DVD archive. Plugging this into the hub did not work. Nothing was recognized and blkid did not show it. Plugging it directly into the Raspberry Pi caused a series of problems with modprobe. I’m not sure if it’s a problem with getting enough power since the drive pulls power through the USB port.</p>
+
+<p>Until I figure it out, I’m glad I have the 32 GB SD card for storage. I can copy media to it as a temporary fix.</p>
+
+<p>Some day, I’d like to get a large drive installed so that I can set up rsyncs scheduled through cron jobs on my other computers for making back ups. Until then, I’d crossing the Raspberry Pi off the list and refocusing back on other projects.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[A random walk]]></title>
+    <link href="http://notquitebeta.github.io/2013/04/30/A_random_walk"/>
+    <updated>2013-04-30T00:00:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/04/30/A_random_walk</id>
+    <content type="html"><![CDATA[<p>There is a mathematical term, <a href="http://en.wikipedia.org/wiki/Random_walk">Random Walk</a>, that describes a path made by a sequence of random moves. You can be a normal person (non-math geek) and understand the concept of a random walk by its name.</p>
+
+<p>I think there is a fine line between having (or feeling you have) ADHD and being productive. The difference is what you are able to produce while you are taking a “random walk.” Most of the time, I feel like there are too many things I want to learn. I’ll start working on a project, then move to something else before I get anywhere with the first. If you subscribe to Malcolm Gladwell’s premise that it takes 10000 hours to master a skill, I’ve definitely spent over 10000 hours learning but probably have few things I’ve worked on for more than 1% of it. The difference in someone with mastery isn’t necessarily the work they’ve done but that they put the work into a single task.</p>
+
+<p>I’ve been distracted from working on Objective-C recently. I’ve wanted to go back to Rails after watching a great 2 part screencast on Rails on <a href="http://peepcode.com/">Peepcode</a>. I also received my Hexy the Hexapod from <a href="http://arcbotics.com/">Arcbotics</a>. It was an open source robotics project that I supported on Kickstarter. Finally, my boss got into <a href="http://www.raspberrypi.org/0">Raspberry Pi</a> and received an extra unit by accident and gave it to me. It looked like a neat project to try out. It had an advantage over Arduino kits in that it can run a version of Linux with python built in.</p>
+
+<p>All this is to say, I need to refocus after this week and reprioritize projects.</p>
+]]></content>
+  </entry>
+  
+</feed>

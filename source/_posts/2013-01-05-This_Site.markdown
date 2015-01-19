@@ -1,0 +1,16 @@
+---
+layout: page
+title: "This Site"
+date: 2013-01-05 00:00
+comments: false
+sharing: true
+footer: true
+categories:
+---
+In the event you are reading this blog (and you are not me), let me tell you about this blog. This will be part journal, part todo list, and part bookmark list. Wha?
+
+Let me give you a little background. I **love** computers! My parents got an Apple II back in the 70′s and I got into Basic back in the day. I learned Pascal in high school (forgot it) and Scheme and Lisp in college (forgot it) and built all models of PC’s form the XT to Pentiums. It was all fun, but I never pursued a career in computers. I became a scientist instead, which was and is still fun, but always dabbled with computers. I used Unix, then Linux, in the 90′s until OsX came out on the Mac and programming in Perl when I could. Not surprisingly, as I moved deeper into science, the moved further away from computers and struggled to keep a toe in the programming waters.
+
+Now, I’d like to get back into computers, not as a career, but catching up on tools, since I made my last website in the 90′s (it was full of day-glo colors with blinky text and animated gifs).
+
+Here it is, the reason for this site. I know I’m not the only person in a situation like this. I know there are people out there in the same boat. I’m going to try to keep track of what I’m learning and my progress here so that the weeds are hacked down in case anyone wants to take part of the same trail. I want others to feel that this is a friendly place to discuss computers and learning. Let’s keep things positive and encouraging. The pace is not going to be quick since I try to spend time with my wonderful wife, awesome, high energy, young son, and a wonderful dog that really likes attention. That said, let’s get something done. **Here we go!**

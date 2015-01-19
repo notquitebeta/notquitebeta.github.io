@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Not Quite Beta]]></title>
+  <link href="http://notquitebeta.github.io/atom.xml" rel="self"/>
+  <link href="http://notquitebeta.github.io/"/>
+  <updated>2014-01-03T19:37:22-05:00</updated>
+  <id>http://notquitebeta.github.io/</id>
+  <author>
+    <name><![CDATA[NQB]]></name>
+    <email><![CDATA[feedback@notquitebeta.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[A Javascript Mobile Template]]></title>
+    <link href="http://notquitebeta.github.io/2013/11/30/A_Javascript_Mobile_template"/>
+    <updated>2013-11-30T20:53:00-05:00</updated>
+    <id>http://notquitebeta.github.io/2013/11/30/A_Javascript_Mobile_template</id>
+    <content type="html"><![CDATA[<p>With some momentum from building something that sort of worked in Meteor and Node, I&rsquo;ve worked on a number of project that also sort of worked.  By sort of, I mean that it has basic functionality but there are small aspects that don&rsquo;t quite work.  For example, I wrote a Meteor.js app last weekend but there are still some peoblems with the publish/subscribe aspects that don&rsquo;t seem to send the correct collections to the client.  When I get that running, I&rsquo;d like to write up a post about it.</p>
+
+<p>Tonight, I wanted to put together a template that would be a starting point for mobile interfaces.  I&rsquo;ve built a framework (although not framework in the programming sense) that should allow someone to easily drop in 4 panels to display.  Navigation is based on tabs at the bottom.</p>
+
+<p><img src="images/20131201_mobile_phone.png" alt="mobile view" /></p>
+
+<p>Viewed from the desktop, all four panels are laid out and the navigation tabs are hidden.</p>
+
+<p><img src="images/20131201_mobile_desktop.png" alt="desktop view" /></p>
+
+<p>In the mobile view, clicking on each tab reviews the panel associated with that tab while hiding the rest.  It also launches some function associated with loading the panel, which can be customized.  For functionality, I used JQuery.  There are cookie functions that are not used.  What needs to be implemented is a Fastclick mechanism (this removes the approvimately <a href="https://developers.google.com/mobile/articles/fast_buttons">300ms delay</a> between pressing a button on a mobile device and running its funciton).  I&rsquo;ve tried to use <a href="http://x1024.github.io/jquery-fastbutton/">JQuery Fastbutton</a> but I don&rsquo;t think it&rsquo;s working (or I need more coffee, not sure).</p>
+
+<p>Overall, this should lower the activation barrier to making an web app by allowing someone to drop in code for each panel.
+Here is the HTML showing the panels and the nav section.  All panels just get plunked between the article tags.</p>
+
+<pre><code>  &lt;header&gt;&lt;h1&gt;Program&lt;/h1&gt;&lt;/header&gt;
+
+  &lt;section id="panels"&gt;
+    &lt;article id="tab1" class="selected"&gt;
+      &lt;header&gt;&lt;h2&gt;Tab1&lt;/h2&gt;&lt;/header&gt;
+    &lt;/article&gt;
+
+    &lt;article id="tab2" class="notSelected hideMobile"&gt;
+      &lt;header&gt;&lt;h2&gt;Tab2&lt;/h2&gt;&lt;/header&gt;
+    &lt;/article&gt;
+
+    &lt;article id="tab3" class="notSelected hideMobile"&gt;
+      &lt;header&gt;&lt;h2&gt;Tab3&lt;/h2&gt;&lt;/header&gt;
+    &lt;/article&gt;
+
+    &lt;article id="tab4" class="notSelected hideMobile"&gt;
+      &lt;header&gt;&lt;h2&gt;Tab4&lt;/h2&gt;&lt;/header&gt;
+    &lt;/article&gt;
+  &lt;/section&gt;
+
+  &lt;nav id="bottomNav"&gt; &lt;!-- hide on desktop --&gt;
+    &lt;ul class="nav"&gt;
+      &lt;li class="navtab selected" data-tab="navtab1"&gt;1&lt;/li&gt;
+      &lt;li class="navtab notSelected" data-tab="navtab2"&gt;2&lt;/li&gt;
+      &lt;li class="navtab notSelected" data-tab="navtab3"&gt;3&lt;/li&gt;
+      &lt;li class="navtab notSelected" data-tab="navtab4"&gt;4&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+</code></pre>
+
+<p>The source is available on <a href="https://github.com/notquitebeta/mobile-4panel">github</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[A Voyage into Javascript]]></title>
+    <link href="http://notquitebeta.github.io/2013/11/17/Javascript"/>
+    <updated>2013-11-17T18:00:00-05:00</updated>
+    <id>http://notquitebeta.github.io/2013/11/17/Javascript</id>
+    <content type="html"><![CDATA[<p>I don&rsquo;t mean to sound like an advertisement for Codeschool (I&rsquo;m not affiliated with them), but I took the lesson on Node.js.  It was eyeopening, mostly because it gave me a sense of empowerment.  It used Express for routing, Redis as a database, and Socket to push information.  Basically, this is much of the appear for a packaged system like Meteor.  It also sparked ideas of how to implement tools.  For example, with Node and Express, I can push information from my system to another system&rsquo;s browser through a RESTful interface.  At work (can&rsquo;t display the code), I was able to build an interface for a tool using HTML, CSS, and JQuery (with Ajax calls) to a server running Node and Express, serving the desired information.  This worked pretty well.  Additionally, the front end was made responsive with CSS media queries.</p>
+
+<p>It only took a few days to put this together and a couple more for tweaking it to work correctly.  Overall, it took 3 weeks, although after the first week and a half, my efforts were split with a second project.</p>
+
+<p>The second project was to make a page/Webapp that lets me enter data and save it to a database in a form.  There are three major views, a list view, a reading view, and an editing view.  This was my chance to try Meteor.js.  I was able to put together eveything but it wasn&rsquo;t a pleasant experience (admittedly, it would probably be better if I was used to the parts of Meteor though, particularly Handlebars.js).  I thought there was a lot of unnecessarily duplicated code because Handlebars didn&rsquo;t have loops like other languages. I also don&rsquo;t have the proper subscription/publishing of data set up.</p>
+
+<p>It&rsquo;s been a lot of fun hacking away at it.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Codeschool and Halloween]]></title>
+    <link href="http://notquitebeta.github.io/2013/10/26/Codeschool_and_Halloween"/>
+    <updated>2013-10-26T11:43:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/10/26/Codeschool_and_Halloween</id>
+    <content type="html"><![CDATA[<p>Codeschool and Halloween</p>
+
+<p>After learning a little javascript, I&rsquo;ve still felt a gap in knowledge with basic web programming (e.g. CSS and HTML).  I signed up with Codeschool. I had tried Codecademy and Peepcode before but neither seem to fit what I was looking for. Peepcode is essentially a collection of video tutorials. It tends to be a bit high level and expects that you know what you are looking to learn. Codecademy contains interactive courses. You read a bit of a lesson and work through exercises. Peepcode tends to be passive. Codecamedy is active but has two gaps for me. 1) some exercises just had you read something and click submit. There was no demonstration of understanding. 2) the lessons, though broken into small chunks, required reading the selection. This may work for some but it&rsquo;s like learning from reading a book, and I find that things don&rsquo;t quite stick for me.</p>
+
+<p>Codeschool is like a merge of the two. Each course consists of a few section. Each section starts with a short video demonstration followed by exercises that are meant to demonstrate some level of understanding. It follows the pattern of first showing you how to do something and then having you repeat something similar on your own. This and having a video (something with sound) tends to engage me better and fit my way of learning.</p>
+
+<p>I had a chance to learn a bit of CSS and JQuery. I&rsquo;m not good at either but I have enough proficiency to use them and understand (somewhat) what I&rsquo;m going. The exposure to the material has been useful and I&rsquo;ve already used a little JQuery on some projects I&rsquo;ve done at work as well as rewriting the Molecular Weight Calculator app (topic of a future post I&rsquo;ll need  to write).</p>
+
+<p>I took two weeks off to work on my son&rsquo;s Halloween costume and am eager to get back to coding.  My next course is on Web Programming for Mobile. What&rsquo;s nice about Codeschool is that it&rsquo;s like a survey course for different web tools. Not a deep dive but easy to understand exposure to many things giving you an ideal of what to explore further.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Getting Started With Meteor.js]]></title>
+    <link href="http://notquitebeta.github.io/2013/10/07/Getting_Started_with_Meteor"/>
+    <updated>2013-10-07T06:13:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/10/07/Getting_Started_with_Meteor</id>
+    <content type="html"><![CDATA[<p>In this second pass through <a href="http://www.amazon.com/dp/1782160825/?tag=noqube-20">Getting Started with Meteor.js JavaScript Framework, by Isaac Strack</a>, it made a lot more sense.  The first time around, I didn&rsquo;t have enough experience with Javascript.  This made debugging small problems a unbelievably difficult.  This time, finding problems with syntax and misplaced punctuation was a lot easier.  There was one point were I ran into problems and it helped to find someone had completed the project and put it up on Github.  A lot of cutting and pasting eventually solved the problem.</p>
+
+<p>Overall, the book is really good.  The length (about 130 pages) was just right.  Any shorter and I don&rsquo;t believe I would have learned what I wanted to learn.  Any longer and I would have the problem where I forgot the beginning before reaching the end.  It&rsquo;s not meant to make you a Meteor expert in the sense that you understand the underlying theory of fibers and threads, but finishing the book makes you functional to start your own project since you see the whole path ahead.</p>
+
+<p>Some folks are able to just get a project done using Google and Stack Overflow.  I&rsquo;m not one of those people.  I need to have a plan in my head for the whole process or it seems too daunting.  Having completed this book and it&rsquo;s included project, I can see the skeleton of a complete project.  This is likely just a psychological crutch but it helps.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The beginnings of Javascript]]></title>
+    <link href="http://notquitebeta.github.io/2013/09/28/The_beginnings_of_Javascript"/>
+    <updated>2013-09-28T20:35:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/09/28/The_beginnings_of_Javascript</id>
+    <content type="html"><![CDATA[<p>It&rsquo;s taking some balancing to learn a little Javascript, a little node, and a little Meteor.  I finished the book, <a href="http://www.amazon.com/dp/0470647833/?tag=noqube-20">JavaScript 24-Hour Trainer, by Jeremy McPeak</a> a few weeks ago and forgot almost everything.  I had taken notes in the Moleskine that my wife got me for Christmas and loaded it into Evernote.  That was nice to have access to it from everywhere and it was sort of searchable based on whether my writing was legible, but I didn&rsquo;t have it in NVAlt, the one unified place where I put code.  NVAlt is nice because I can access it with Simplenote on my phone and it is quite searchable.  I took a few hours to transcribe notes from Evernote to NVAlt which proved to be a nice refresher.</p>
+
+<p>I also had the opportunity to write my first Node script.  It was just a few lines that requested a list of projects and then looked for entries in each project.  What I liked was that it did this asynchonously (or is it non-blocking? (or the computer was acting fast that day)).  What it does is query for a list of projects, then for each project, it sendsa q request for information, printing the information when it is retreived.  The non-blocking characteristic of Node makes it fast because it doesn&rsquo;t wait for the information to return before sending a request for the next project.  Instead, as soon as a request is sent, it goes ahead and moves to send the next request.  The program takes care of things when the information is returned, whenever it returns.  I think this will have benefits when there becomes many more entries for each project because all the requests are out at once, not waiting to run serially.  It&rsquo;s like when a King sends his four fastest ships out to find someone instead of sending one ship out at a time. (Yes, just like that).</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The longest day]]></title>
+    <link href="http://notquitebeta.github.io/2013/08/04/The_longest_day"/>
+    <updated>2013-08-04T15:10:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/08/04/The_longest_day</id>
+    <content type="html"><![CDATA[<p>Previously, I had wanted to start learning Meteor.js. I thought it looked like an interesting way to build web apps analogous to Rails, although possibly not as robust because it is not as mature and doesn&rsquo;t have as many Libraries. I went through some tutorials and the book, <a href="http://www.amazon.com/dp/1782160825/?tag=noqube-20">Getting Started with Meteor.js JavaScript Framework, by Isaac Strack</a>.</p>
+
+<p>I follow <a href="http://www.twitter.com/meteorjs">meteorjs</a> on Twitter, and they often post links to tutorials. I like the tutorials because I could finish one in a night but I felt like I wasn&rsquo;t getting enough of the big picture.   I frequently hear people who learn a computer language by starting with a problem or project they want to solve. For some reason, I never seem to have think of a problem to solve. I usually like to learn as much as I can and then trying to see how I can reimplement a current workflow (reinvent the wheel). I always used to think that I was creative because I could do things others didn&rsquo;t think to do. More and more though, I don&rsquo;t think I have the same creativity that allows people to come up with ideas and then solve them. I think I&rsquo;ve always been an incremental thinker; someone who takes a solution and tries to apply it to a slightly different problem. This is why I seem to like going to books more, because I get a whole perspective on the topic. Also, I hope to have a spark of inspiration while reading that says, &ldquo;maybe this would also work for &hellip;&rdquo; Most of the time, this doesn&rsquo;t happen.</p>
+
+<p>While I&rsquo;m somewhat familiar with HTML and less so with CSS, my Javascript knowledge is non-existent.  I just don&rsquo;t know the syntax. So when something didn&rsquo;t work while following the book or a Meteor tutorial, I was stuck. Short of finding a typo, I wouldn&rsquo;t know how to debug the problem. This is what made me rethink my learning strategy.  I needed to start with a basic familiarity with Javascript. For this, I got the book, <a href="http://www.amazon.com/dp/0470647833/?tag=noqube-20">JavaScript 24-Hour Trainer, by Jeremy McPeak</a>.</p>
+
+<p>Now by the title, you would think this could be completed in a single, sleep-deprived day. It actually took 3.5 weeks. By the time I finished the book, I didn&rsquo;t remember the beginning anymore. Luckily, I took notes and even used the photo feature of Evernote to record them for reference. But the important thing is that I have a sense of the syntax now. The other thing I learned was that I don&rsquo;t like how it seems a developer spent unreasonable effort to support IE 8 and below (which is
+probably standard in many corporate settings), especially when IE 10 is available.</p>
+
+<p>Now that I&rsquo;ve learned some Javascript, the next steps can be:</p>
+
+<ul>
+<li>more Javascript (which is probably a good idea).</li>
+<li>Back to Meteor</li>
+<li>maybe some Node.js, which is the server side javascript framework on which Meteor is built. Node has some potential application in that it could be used from the command line in the absence of any web interface.</li>
+</ul>
+
+
+<p>Finally, the other interesting stumbling-upon-thingy (there should be a word for this) is <a href="http://phonegap.com/">Phonegap</a>, a tool that allows someone to write an app in HTML, CSS, and Javascript and translate it to a mobile platform.</p>
+
+<p>I&rsquo;m glad I learned Javascript. I just need to start using it to get it into my head.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Refocusing]]></title>
+    <link href="http://notquitebeta.github.io/2013/07/08/Refocusing"/>
+    <updated>2013-07-08T19:06:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/07/08/Refocusing</id>
+    <content type="html"><![CDATA[<p>The last two weeks have been spent on trying to learn R, a statistical programming language, Meteor, a javascript-based reactive web app programming language, building the FAQ pages, and a little further exploration of Git.</p>
+
+<p>Learning Meteor was interesting but I found that I didn&rsquo;t know enough javascript to know where javascript ended and Meteor began. I got the book, Learning Meteor, but found that when thing didn&rsquo;t work, I didn&rsquo;t know enough to troubleshoot it.</p>
+
+<p>I think I&rsquo;m at a good stopping point for R, the FAQ, and Git. Meteor really requires further knowledge if Javascript so I think that is what will be where I focus the next few weeks.</p>
+
+<p>If I can get rolling on Rails again, I may be able to do it in parallel with Javascript. It seems like javascript is a fundamental language I need learn with CSS. Then, whether l go with Rails, Meteor, or an iPhone objective-c web app, I have a more solid foundation.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[A different way of thinking about power.]]></title>
+    <link href="http://notquitebeta.github.io/2013/07/07/A_different_way_of_thinking_about_power"/>
+    <updated>2013-07-07T11:36:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/07/07/A_different_way_of_thinking_about_power</id>
+    <content type="html"><![CDATA[<p>I&rsquo;ve had the new Macbook Air (2013) with the Haswell CPU for a little over a week now.  My last Macbook Air had a battery that was supposed to last 4.5 hours but practically lasted about 3 hours. Part of that could have been because I was always hitting the limit of the RAM and pages were being cached to disk.  Running the same constellation of apps, I can see that I&rsquo;m usually using more than the 2GB of built in memory I had.  At times, I&rsquo;ve spiked to 4 GB now.</p>
+
+<p>With the new latop, I usually will get over 10 hours of battery life, I think.  It&rsquo;s hard to say because the calculation varies quite a bit.  The battery icon in the menu bar is no longer meaningful becuase it may look like there is 30% left but still have over 4 hours remaining.  Here is a view of the battery status.</p>
+
+<p><img src="images/2013-07-07-battery.png" alt="battery" /></p>
+
+<p>For those that may be wondering, this is an <a href="http://www.alfredapp.com">Alfred2</a> workflow using a <a href="http://www.alfredforum.com/topic/1211-battery-view-summary-stats-about-your-laptop-battery/">battery workflow</a> which can be obtained from <a href="https://dl.dropbox.com/u/2377432/alfredv2/battery/Battery.alfredworkflow">here</a> (Thanks Benzi!).</p>
+
+<p>The change this brought on is that I&rsquo;m not always hovering close to my power sourse.  Usually, when I&rsquo;m working on the couch at night, I am checking my battery status and will have to stop when I get down to less than 10% and I start planning accordingly when I get down to 30%.  Now, the laptop is like an iPad or iPhone where I charge it and just carry it around.  I&rsquo;ll leave it on the dinner table all day while at work without worrying that the battery will be drained when I get home.  I&rsquo;ve had it unplugged for days during the work week without a problem, plugging it in when there was still 40% power remaining.  The amazing part is that I can recharge (not fully) in an hour and be good for another day.</p>
+
+<p>It&rsquo;s simply a different way to think about a laptop.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Setting up a new machine]]></title>
+    <link href="http://notquitebeta.github.io/2013/06/29/Setting_up_a_new_machine"/>
+    <updated>2013-06-29T19:06:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/06/29/Setting_up_a_new_machine</id>
+    <content type="html"><![CDATA[<p>With the announcement of the new MacBook Airs at the WWDC (2013) with 12 hour batter life (13&#8221; model), I was ready for an upgrade.  My old, beloved laptop was a 2009 MacBook Air.  It&rsquo;s a great system but with 2 GB memory and 128GB storage, it was always near full and swapping memory.</p>
+
+<p>With the new laptop, I went with Migration Assistant to move the old system over.  I&rsquo;ve never used it before so I was curious to see how it worked.  When it started, it said it would take ~6 hours to finish, so I left it overnight.  When I checked it in the morning, it said it still has 2 hours 56 minutes left.  After a while, the time didn&rsquo;t move.  So after stopping it and reinstalling OS 10.8, I went with installing from scratch.  That looked ok and App store installs went well.  Then the software that wasn&rsquo;t from the App Store went a little slower.  I had to find all the links to the software, especially ones purchased from bundled which had specific download links. Thanks to <a href="https://agilebits.com/onepassword">1Password</a>, I was able to get everything (I think) registered.</p>
+
+<p>Then came the Ruby&rsquo;s.  It&rsquo;s been a number of years since I installed and upgraded Ruby.  Since then, I&rsquo;ve done things that required installing different gems (e.g. Octopress, Jekyll, and Rails).  Octopress was relatively easy to get set up since it had a Gemfile and required a <code>bundle install</code>.  I was able to deploy the blog.  Then I went to a Jekyll directory (the FAQs mentioned previously).  The gems installed ok.  Then I went back to the Octopress blog and it failed to deploy.  Hmmm.</p>
+
+<p>After hours of troubleshooting, I don&rsquo;t know if I fixed the problem.  I&rsquo;m hoping to use <code>rvm</code> in the hopes of fixing the problem, although I&rsquo;m not sure what the problem really was.  If this post gets loaded, it means I can currently deploy.  If this is the most recent post, it means I&rsquo;ve messed something up.</p>
+
+<p>It&rsquo;s a little frustrating that gems don&rsquo;t appear to be backwards compatible.  Upgrading a gem seems to mess things up.  The second frustration comes from the fact that much of Ruby/rvm appears to be tcsh-unfriendly.  Since the software I use for work is based on Fortran cose and programmers from the 70&rsquo;s, it is largely tcsh-based.  As such, I usually switch to tcsh on my machines.  With more use of Ruby and rvm, I&rsquo;m taking the plunge and moving to bash.  It may take a bit getting used to but it&rsquo;s probably good to join the 21st century.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Jekyll FAQs pt 2]]></title>
+    <link href="http://notquitebeta.github.io/2013/06/26/A_Jekyll_Manual2"/>
+    <updated>2013-06-26T21:34:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/06/26/A_Jekyll_Manual2</id>
+    <content type="html"><![CDATA[<p>I&rsquo;ve spent the last week or so filling out the contents of the FAQs.  It&rsquo;s taken most of my free time but I&rsquo;m almost done.  For formatting, I&rsquo;ve used Twitter Bootstrap extensively.  Its really nice.</p>
+
+<p>For the questions and answers, I tried to use collapsing panels so that someone can quickly scan questions because the answers can get so long that no one would make it past the third question.</p>
+
+<p>The original solution was to use HTML5&rsquo;s summary tag:</p>
+
+<pre><code>&lt;details class="q-and-a"&gt;
+  &lt;summary class="question"&gt;
+    &lt;strong&gt;
+    question1
+    &lt;/strong&gt;
+  &lt;/summary&gt;
+  &lt;p class="answer"&gt;answer&lt;/p&gt;
+&lt;/details&gt;
+&lt;p&gt;
+</code></pre>
+
+<p>The problem is that this works on Chrome and Safari but NOT on Firefox and IE.  While I would be fine with this in the regular world, at work, almost everyone uses IE.</p>
+
+<p>The solution was to further use Twitter Bootstrap&rsquo;s collapse class.
+The above code is now fixed like this:</p>
+
+<pre><code>&lt;div class="q-and-a"&gt;
+  &lt;div class="question" data-toggle="collapse" data-target="#demo"&gt;
+    &lt;strong&gt;
+    question2
+    &lt;/strong&gt;
+  &lt;/div&gt;
+  &lt;div id="demo" class="collapse"&gt;
+  &lt;p class="answer"&gt;answer&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>The new page (compared to the unformatted image from the last post) is shown below.  Question 1 uses the summary tag, question 2 uses Bootstrap solution, question 3 is the expanded view of the Bootstrap solution.</p>
+
+<p><img src="images/2013-06-26_FAQs2.png" alt="page image" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Jekyll FAQs]]></title>
+    <link href="http://notquitebeta.github.io/2013/06/17/A_Jekyll_Manual"/>
+    <updated>2013-06-17T21:47:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/06/17/A_Jekyll_Manual</id>
+    <content type="html"><![CDATA[<p>A quick diversion from Rails.  I wanted to make some static web pages with FAQs for different software packages.  There will be a page for each software package and a number of questions and answers will be listed on each page.  This is doable with plain HTML but I&rsquo;d like to try a few new tools.</p>
+
+<p>For the pages, I want to use <a href="http://jekyllrb.com/">Jekyll</a>.  Jekyll uses templating to create static pages.  This is a similar concept as that used in Rails, there you can have a layout and fill in specific parts of the common layout from different sources.  Why not use Rails?  If you don&rsquo;t administer the server, you may not have the ability to run a Rails app.  With static pages, if you have an accessible space for web pages, you are in business.</p>
+
+<p>To get going, I&rsquo;m following Jekyll&rsquo;s <a href="http://jekyllrb.com/docs/quickstart/">Quick-start Guide</a>.  After installing jekyll (<code>gem install jekyll</code>), you make a jekyll directory.  I&rsquo;m not sure why but most of these Ruby-based utilies fail when I use tcsh so, after switching to bash, you create a new project directory(<code>jekyll new FAQs</code>).</p>
+
+<p>Here is the initial directory tree:
+<code></p>
+
+<pre>
+├── _config.yml
+├── _layouts
+│   ├── default.html
+│   └── post.html
+├── _posts
+│   └── 2013-06-17-welcome-to-jekyll.markdown
+├── css
+│   ├── main.css
+│   └── syntax.css
+└── index.html
+</pre>
+
+
+<p></code></p>
+
+<p>Jekyll is popular for making blogs and <a href="http://octopress.org/">Octopress</a>, which I use for my blog, is built on top of Jekyll.</p>
+
+<p>&hellip;</p>
+
+<p>After about an hour and a half, I have the following directory tree:
+<code></p>
+
+<pre>
+├── _config.yml
+├── _includes
+│   ├── footer.html
+│   ├── header.html
+│   └── navigation.html
+├── _layouts
+│   ├── default.html
+│   └── page.html
+├── assets
+│   ├── css
+│   │   ├── bootstrap-responsive.css
+│   │   ├── bootstrap-responsive.min.css
+│   │   ├── bootstrap.css
+│   │   ├── bootstrap.min.css
+│   │   └── style.css
+│   └── js
+│       ├── bootstrap.js
+│       ├── bootstrap.min.js
+│       └── scripts.js
+├── css
+│   ├── main.css
+│   └── syntax.css
+├── index.html
+├── software1
+│   └── index.html
+├── software2
+│   └── index.html
+└── software3
+    └── index.html
+</pre>
+
+
+<p></code></p>
+
+<p>In <code>_includes</code>, I have a header.html that points to the <a href="http://twitter.github.io/bootstrap/">Twitter Bootstrap</a> .css and .js files.  The footer.html is a placeholder that just says footer.  navigation.html has a unordered list with home and links to software1-3.  I&rsquo;m hoping to use this for some navigation tabs or something.</p>
+
+<p>In <code>_layouts</code>, I created page.html.  This is the template I use for home and the three software pages.</p>
+
+<p>Assets contains the .css and .js files.  I have not used any of these for formatting the pages yet.</p>
+
+<p>Finally, each of the three software directories contian an index.html file which will contain the questions, answers to the questions, and code examples for the questions.</p>
+
+<p>Right now, everything is incredibly ugly but appears (roughly) functional.</p>
+
+<p><img src="images/2013-06-17-FAQs.png" alt="page image" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby on Rails Tutorial, Over the Hump]]></title>
+    <link href="http://notquitebeta.github.io/2013/06/11/Rails_tutorial_pt3"/>
+    <updated>2013-06-11T21:45:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/06/11/Rails_tutorial_pt3</id>
+    <content type="html"><![CDATA[<p><em>Ruby on Rails tutorial &ndash; Chapter 4-7/11</em></p>
+
+<p>Chapter 4 was a primer on Ruby for Rails development.  Having been using Ruby for almost 2 years, this was the easiest Chapter for me but possibly more intimidating for someone new to it.</p>
+
+<p>Chapter 5 was the start of a <em>huge</em> Chapter and was essentially a fully functional app without using scaffolding.  There were a lot of details but was very well presented.  There were also a lot of other non-Rails development tools presented.  At times, it&rsquo;s not clear whether some tools are used occasionally or frequently.  For example, the impression I get is that RSpec is used often; however, RSpec is not the default test tool.  What about Spork?  I find Spork incredibly useful because it speeds up testing.  Spork was also one of the sources of great frustration because I spent an hour trying to find the source of a failed test, only to luck on a <a href="http://stackexchange.com/">Stack Overflow</a> post that suggested someone restart the Spork server because changes in the settings were not incorporated.</p>
+
+<p>Chapter 6 and 7 describes user authentication.  It could have been me but I went through this section without really getting what was going on.  It was a &ldquo;type this and this&rdquo; sort of experience.  Nothing stuck.  Unfortunately, this seems like something that will be needed for most apps.  Maybe if I make it through this book, going back for a second run through will make more sense.  One things that may be tripping me up is that, it seems, the earlier chapters took the approach, &ldquo;Type all this in first and I&rsquo;ll explain it piece by piece.&rdquo;  The last two Chapters started explaining bits of code before any typing occured.  I&rsquo;m not sure if it&rsquo;s having the context before the explanation or having a chance to think about it before the explanation, but I preferred the earlier approach.</p>
+
+<p>One other problem I still have is the files.  There are some files that make sense like the header and footer being under <code>app/views/layouts/</code>.  That makes sense.  But there are a number of files that are created.  I&rsquo;m not sure if files and directories require specific names to be incorporated into the page.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Continuing with the Ruby on Rails Tutorial]]></title>
+    <link href="http://notquitebeta.github.io/2013/06/02/Rails_tutorial_pt2"/>
+    <updated>2013-06-02T21:45:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/06/02/Rails_tutorial_pt2</id>
+    <content type="html"><![CDATA[<p><em>Ruby on Rails tutorial &ndash; Chapter 2-3/11</em></p>
+
+<p>Chapter 2 was fun and short. Chapter 3 was mostly ok.  The page that was built was straightforward enough.  Then, there were more advanced topics like installing PostgreSQL locally for development, then installing Guard and Spork for testing.</p>
+
+<p>Something happened with the PostgreSQL set-up. Installation was easy enough.  There is a link to download a zipped version of the app itself, which can then be dropped into the /Applications folder.  he problem seemed to be in editing the database.yml file to configure it.  Along the way, I messed something up bad enough that my rspec tests were failing with weird errors.  I slowly ran &lsquo;git checkout &mdash; files&rsquo; until I got to a point before the PostgreSQL setup and the Rspec tests were working again.  Then, I carefully tiptoed around the database problem and installed Guard, then Spork.  I&rsquo;m not sure exactly what they were doing, especcially Guard.  Having Spork running definiely sped up the Rspec tests though.</p>
+
+<p>Installing the Rubytest package into Sublime Text 2 was quite nice as well.  Other than the PostgreSQL debacle and not quite understanding the setup files for Guard and Spork, Chapter 3 was ok.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Rails tutorial]]></title>
+    <link href="http://notquitebeta.github.io/2013/05/31/Rails_tutorial"/>
+    <updated>2013-05-31T20:09:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/05/31/Rails_tutorial</id>
+    <content type="html"><![CDATA[<p><em>Ruby on Rails tutorial &ndash; Chapter 1/11</em></p>
+
+<p>A few months ago, I tried to go through the Ruby on Rails Tutorial. I lugged this 500+ page book around for a few weeks and got to Chapter 5 when I got stuck. The previous post was <a href="http://notquitebeta.com/2013/01/27/The_deployment_problem/">here</a>.</p>
+
+<p>At the time, I had been unfamiliar with a lot of other languages like HTML, CSS, etc. It was all very unfamiliar and reading the book was overwhelming because it felt like there was no foundation to build from. Somewhere in chapter 5, I got stuck on a problem that I couldn&rsquo;t fix and that ended things.</p>
+
+<p>This time around, I&rsquo;m going to skip the paper copy of the book and go straight to the <a href="http://ruby.railstutorial.org/ruby-on-rails-tutorial-book">on-line version</a>.  Although some of my reading this will be on the iPad, some will also be on my laptop. This way, I can work the examples out at the same time I&rsquo;m reading instead of having the book next to the computer.</p>
+
+<p>My goal is to read the book (11 chapters) and deploy a basic version of <a href="http://notquitebeta.com/2013/05/29/Back_on_the_Rails/">Exercise checklist/tracker</a> by the 4th of July weekend.  That&rsquo;s a little over a month from now. I just finished chapter 1. Ten more chapters to go and then the app.</p>
+
+<p>Go, go, go!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Back On The Rails]]></title>
+    <link href="http://notquitebeta.github.io/2013/05/29/Back_on_the_Rails"/>
+    <updated>2013-05-29T18:56:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/05/29/Back_on_the_Rails</id>
+    <content type="html"><![CDATA[<p>After some time playing with Javascript and jQuery, I&rsquo;m thinking of moving back to learning Ruby on Rails.  There are some small WebApps I&rsquo;d like to build.  Here is an exercise tracker.</p>
+
+<h4>App: Exercise Checklist/Tracker</h4>
+
+<ul>
+<li>Allow user log in so that it can be used by different people</li>
+<li>Add an exercise to the list</li>
+<li>have a checkbox for the day</li>
+<li>it should reset each day</li>
+<li>have a optional memo field for a number</li>
+</ul>
+
+
+<h4>I should learn:</h4>
+
+<ul>
+<li>How to authenticate users</li>
+<li>leave a cookie?</li>
+<li>implement as a responsive design</li>
+<li>deploy to &hellip; (heroku?)</li>
+</ul>
+
+
+<h4>Other Ideas</h4>
+
+<ul>
+<li>In the full size page, include an inspirational image randomly from Flickr?</li>
+<li>Add a bar graph(?) for each exercise vs day</li>
+<li>Alternatively, use a calendar and color each day based on % of activities completed (e.g. 0-10%: red, 10-60%:orange, 60-99%: yellow, 100% green)</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Vacation]]></title>
+    <link href="http://notquitebeta.github.io/2013/05/20/Vacation"/>
+    <updated>2013-05-20T17:43:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/05/20/Vacation</id>
+    <content type="html"><![CDATA[<p>The family is on vacation this week. Tech gear (and chargers) packed:</p>
+
+<ul>
+<li>iPhone</li>
+<li>iPad</li>
+<li>AppleTV</li>
+<li>Airport Express</li>
+<li>Laptop</li>
+</ul>
+
+
+<p>We knew the house we rented had wifi but did not know about what inputs were available on the TV (yeah, we&rsquo;re addicted).</p>
+
+<p>I hadn&rsquo;t realized that wifi was open to the public but had a web-based login. This is one where you can connect to the network but, when you open a page on the browser, you are prompted for a username/password (there must be a name for this type of network). The only problem with this type of setup is that you can&rsquo;t authenticate on devices that do not have browsers. So both the AppleTV and Airport Express were not able to connect.</p>
+
+<p>Luckily, I had a RCA-to-dock cable on my trusty 1st gen iPad. Using this, we were able to connect to Netflix, etc.</p>
+
+<p>I&rsquo;m not sure if it&rsquo;s the iPad, cable, or TV, but we couldn&rsquo;t get music to stream through the TV (no sound system with connections). The solution was to start the music app and then start the Netflix app. Without choosing something to watch, it displays the Netflix logo on the screen. By pushing video, the music playing in the background of the iPad was sent through the speakers!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Remote Deployment]]></title>
+    <link href="http://notquitebeta.github.io/2013/05/13/Remote_Deployment"/>
+    <updated>2013-05-13T21:37:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/05/13/Remote_Deployment</id>
+    <content type="html"><![CDATA[<p>Although I&rsquo;m running on my laptop, I wanted to get a remote deployment capability running just in case I wanted to deploy my blog remotely.</p>
+
+<pre><code>#! /usr/bin/env ruby
+require 'fileutils'
+
+while true
+ if File.exists?("/path/to/file")
+   FileUtils.rm("/path/to/file")
+  command = "cd /"/path/to/octopress ; bundle exec rake generate; bundle exec rake deploy; cd -"
+  system(command)
+ end
+ sleep 120
+end
+</code></pre>
+
+<p>It checks for <code>/path/to/file</code> and if the file exists, it deletes the file (so it doesn&rsquo;t keep deploying) and deploys the blog. It then cycles and checks every 2 minutes.</p>
+
+<p>To deploy with Drafts, I have a Dropbox action to create the file.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Tree for OsX]]></title>
+    <link href="http://notquitebeta.github.io/2013/05/12/Tree_for_OSX"/>
+    <updated>2013-05-12T21:53:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/05/12/Tree_for_OSX</id>
+    <content type="html"><![CDATA[<p>One function I always need to manually install when I move to a new computer is tree.  When you run tree, you get a listing of all subdirectories and files within a given directory.</p>
+
+<p>Here is a <a href="http://shaunchapman.me/post/329270449/how-to-install-the-tree-command-on-mac-os-x">link to a nice install for OsX</a>.  I&rsquo;m putting it here so that I can find the link.  Big thanks for Shaun Chapman.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Bootstrap]]></title>
+    <link href="http://notquitebeta.github.io/2013/05/11/Bootstrap"/>
+    <updated>2013-05-11T18:05:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/05/11/Bootstrap</id>
+    <content type="html"><![CDATA[<p>One of my goals that I had the last few months was to use Twitter Bootstrap. Written by two folks at Twitter Mark Otto(@mdo) and Jacob Thornton (@fat).</p>
+
+<p>Bootstrap does many, many thing. One thing that stood out was the it makes organizing a webpage easier by breaking the page into 12 columns. Then, you can use the span classes to tell it how many columns to use (out of 12 for the full width). But,the reason I wanted to learn it was to be able to make pages that are &ldquo;responsive,&rdquo; which to me means it can display properly on mobile browsers. I&rsquo;m sure these features are just the tip of the iceberg.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[10 Years Behind]]></title>
+    <link href="http://notquitebeta.github.io/2013/05/11/10_Years_Behind"/>
+    <updated>2013-05-11T05:36:00-04:00</updated>
+    <id>http://notquitebeta.github.io/2013/05/11/10_Years_Behind</id>
+    <content type="html"><![CDATA[<p>Today, I had a chance to work with a Java jar file. I needed to run a visualization software as a Java applet. I hadn&rsquo;t realize how easy it was to set up.</p>
+
+<pre><code>&lt;applet
+    width="640" height="480" 
+    code="MoleculeViewerApplet"
+    codebase="."
+    archive="program.jar"&gt;
+    &lt;param name="var1" value="value1"&gt;
+&lt;/applet&gt;
+</code></pre>
+
+<p>It did take a while to figure out that the name and value parameters were passed together to the program. The two variables set actually get sent as <code>var1=value1</code> to the executed applet.</p>
+
+<p>I&rsquo;ve been meaning to get this running for a while now but the software was released in 2003 and the applet HTML tag has already been depreciated in HTML5. Still, it was good to know. You never know when some esoteric bit of knowledge could be used.  Also, if I ever need to set up an applet in a web page, I&rsquo;m off to the races.</p>
+]]></content>
+  </entry>
+  
+</feed>
